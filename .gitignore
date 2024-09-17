@@ -32,6 +32,3 @@ venv
 
 
 
-# Cloud metadata
-.cloud/
-.cloudbuild/

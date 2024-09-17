@@ -1,0 +1,10 @@
+__pycache__
+.dockerignore
+Dockerfile
+.env
+.git
+.gitignore
+venv
+.ipynb_checkpoints
+yaml_str.ipynb
+

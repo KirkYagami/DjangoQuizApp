@@ -10,8 +10,7 @@ __pycache__/
 
 # Django
 db.sqlite3
-/media
-/staticfiles
+
 
 # Environment variables
 .env
@@ -21,40 +20,17 @@ db.sqlite3
 .idea/
 .DS_Store
 
-# Docker
-*.log
-docker-compose.yml
-docker-compose.override.yml
-.dockerignore
-Dockerfile
+
 
 # Virtual environments
-venv/
-env/
-*.venv
-.Python
+venv
 
-# Byte-compiled / optimized / DLL files
-*.py[cod]
 
 # Migrations
 */migrations/*
 
-# Logs
-*.log
-logs/
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-*.un~
-.pytest_cache/
+
 
 # Cloud metadata
 .cloud/

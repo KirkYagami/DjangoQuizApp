@@ -1,0 +1,1511 @@
+- model: sim.quiz
+  pk: 5
+  fields:
+    name: GCC PDE Quiz 05
+
+
+- model: sim.question
+  pk: 209
+  fields:
+    quiz: 5
+    text: When running a pipeline that has a BigQuery source, on your local machine, you continue to get permission denied errors. What could be the reason for that?
+- model: sim.answer
+  pk: 840
+  fields:
+    question: 209
+    text: Your gcloud does not have access to the BigQuery resources
+    is_correct: true
+- model: sim.answer
+  pk: 841
+  fields:
+    question: 209
+    text: BigQuery cannot be accessed from local machines
+    is_correct: false
+- model: sim.answer
+  pk: 842
+  fields:
+    question: 209
+    text: You are missing gcloud on your machine
+    is_correct: false
+- model: sim.answer
+  pk: 843
+  fields:
+    question: 209
+    text: Pipelines cannot be run locally
+    is_correct: false
+
+- model: sim.question
+  pk: 210
+  fields:
+    quiz: 5
+    text: What Dataflow concept determines when a Window's contents should be output based on certain criteria being met?
+- model: sim.answer
+  pk: 844
+  fields:
+    question: 210
+    text: Sessions
+    is_correct: false
+- model: sim.answer
+  pk: 845
+  fields:
+    question: 210
+    text: OutputCriteria
+    is_correct: false
+- model: sim.answer
+  pk: 846
+  fields:
+    question: 210
+    text: Windows
+    is_correct: false
+- model: sim.answer
+  pk: 847
+  fields:
+    question: 210
+    text: Triggers
+    is_correct: true
+
+- model: sim.question
+  pk: 211
+  fields:
+    quiz: 5
+    text: Which of the following is NOT one of the three main types of triggers that Dataflow supports?
+- model: sim.answer
+  pk: 848
+  fields:
+    question: 211
+    text: Trigger based on element size in bytes
+    is_correct: true
+- model: sim.answer
+  pk: 849
+  fields:
+    question: 211
+    text: Trigger that is a combination of other triggers
+    is_correct: false
+- model: sim.answer
+  pk: 850
+  fields:
+    question: 211
+    text: Trigger based on element count
+    is_correct: false
+- model: sim.answer
+  pk: 851
+  fields:
+    question: 211
+    text: Trigger based on time
+    is_correct: false
+
+- model: sim.question
+  pk: 212
+  fields:
+    quiz: 5
+    text: Which Java SDK class can you use to run your Dataflow programs locally?
+- model: sim.answer
+  pk: 852
+  fields:
+    question: 212
+    text: LocalRunner
+    is_correct: false
+- model: sim.answer
+  pk: 853
+  fields:
+    question: 212
+    text: DirectPipelineRunner
+    is_correct: true
+- model: sim.answer
+  pk: 854
+  fields:
+    question: 212
+    text: MachineRunner
+    is_correct: false
+- model: sim.answer
+  pk: 855
+  fields:
+    question: 212
+    text: LocalPipelineRunner
+    is_correct: false
+
+- model: sim.question
+  pk: 213
+  fields:
+    quiz: 5
+    text: The Dataflow SDKs have been recently transitioned into which Apache service?
+- model: sim.answer
+  pk: 856
+  fields:
+    question: 213
+    text: Apache Spark
+    is_correct: false
+- model: sim.answer
+  pk: 857
+  fields:
+    question: 213
+    text: Apache Hadoop
+    is_correct: false
+- model: sim.answer
+  pk: 858
+  fields:
+    question: 213
+    text: Apache Kafka
+    is_correct: false
+- model: sim.answer
+  pk: 859
+  fields:
+    question: 213
+    text: Apache Beam
+    is_correct: true
+
+- model: sim.question
+  pk: 214
+  fields:
+    quiz: 5
+    text: The _________ for Cloud Bigtable makes it possible to use Cloud Bigtable in a Cloud Dataflow pipeline.
+- model: sim.answer
+  pk: 860
+  fields:
+    question: 214
+    text: Cloud Dataflow connector
+    is_correct: true
+- model: sim.answer
+  pk: 861
+  fields:
+    question: 214
+    text: DataFlow SDK
+    is_correct: false
+- model: sim.answer
+  pk: 862
+  fields:
+    question: 214
+    text: BigQuery API
+    is_correct: false
+- model: sim.answer
+  pk: 863
+  fields:
+    question: 214
+    text: BigQuery Data Transfer Service
+    is_correct: false
+
+
+- model: sim.question
+  pk: 215
+  fields:
+    quiz: 5
+    text: You have a job that you want to cancel. It is a streaming pipeline, and you want to ensure that any data that is in-flight is processed and written to the output. Which of the following commands can you use on the Dataflow monitoring console to stop the pipeline job?
+- model: sim.answer
+  pk: 836
+  fields:
+    question: 215
+    text: Cancel
+    is_correct: false
+- model: sim.answer
+  pk: 837
+  fields:
+    question: 215
+    text: Drain
+    is_correct: true
+- model: sim.answer
+  pk: 838
+  fields:
+    question: 215
+    text: Stop
+    is_correct: false
+- model: sim.answer
+  pk: 839
+  fields:
+    question: 215
+    text: Finish
+    is_correct: false
+
+- model: sim.question
+  pk: 216
+  fields:
+    quiz: 5
+    text: You are planning to use Google's Dataflow SDK to analyze customer data such as displayed below. Your project requirement is to extract only the customer name from the data source and then write to an output PCollection. Tom, 555 X street - Tim, 553 Y street - Sam, 111 Z street - Which operation is best suited for the above data processing requirement?
+- model: sim.answer
+  pk: 868
+  fields:
+    question: 216
+    text: ParDo
+    is_correct: true
+- model: sim.answer
+  pk: 869
+  fields:
+    question: 216
+    text: Sink API
+    is_correct: false
+- model: sim.answer
+  pk: 870
+  fields:
+    question: 216
+    text: Source API
+    is_correct: false
+- model: sim.answer
+  pk: 871
+  fields:
+    question: 216
+    text: Data extraction
+    is_correct: false
+
+- model: sim.question
+  pk: 217
+  fields:
+    quiz: 5
+    text: Which Cloud Dataflow / Beam feature should you use to aggregate data in an unbounded data source every hour based on the time when the data entered the pipeline?
+- model: sim.answer
+  pk: 872
+  fields:
+    question: 217
+    text: An hourly watermark
+    is_correct: false
+- model: sim.answer
+  pk: 873
+  fields:
+    question: 217
+    text: An event time trigger
+    is_correct: false
+- model: sim.answer
+  pk: 874
+  fields:
+    question: 217
+    text: The with Allowed Lateness method
+    is_correct: false
+- model: sim.answer
+  pk: 875
+  fields:
+    question: 217
+    text: A processing time trigger
+    is_correct: true
+
+- model: sim.question
+  pk: 218
+  fields:
+    quiz: 5
+    text: Which of the following is NOT true about Dataflow pipelines?
+- model: sim.answer
+  pk: 876
+  fields:
+    question: 218
+    text: Dataflow pipelines are tied to Dataflow, and cannot be run on any other runner
+    is_correct: true
+- model: sim.answer
+  pk: 877
+  fields:
+    question: 218
+    text: Dataflow pipelines can consume data from other Google Cloud services
+    is_correct: false
+- model: sim.answer
+  pk: 878
+  fields:
+    question: 218
+    text: Dataflow pipelines can be programmed in Java
+    is_correct: false
+- model: sim.answer
+  pk: 879
+  fields:
+    question: 218
+    text: Dataflow pipelines use a unified programming model, so can work both with streaming and batch data sources
+    is_correct: false
+
+- model: sim.question
+  pk: 219
+  fields:
+    quiz: 5
+    text: You are developing a software application using Google's Dataflow SDK, and want to use conditional, for loops and other complex programming structures to create a branching pipeline. Which component will be used for the data processing operation?
+- model: sim.answer
+  pk: 880
+  fields:
+    question: 219
+    text: PCollection
+    is_correct: false
+- model: sim.answer
+  pk: 881
+  fields:
+    question: 219
+    text: Transform
+    is_correct: true
+- model: sim.answer
+  pk: 882
+  fields:
+    question: 219
+    text: Pipeline
+    is_correct: false
+- model: sim.answer
+  pk: 883
+  fields:
+    question: 219
+    text: Sink API
+    is_correct: false
+
+- model: sim.question
+  pk: 220
+  fields:
+    quiz: 5
+    text: Which of the following IAM roles does your Compute Engine account require to be able to run pipeline jobs?
+- model: sim.answer
+  pk: 884
+  fields:
+    question: 220
+    text: dataflow.worker
+    is_correct: true
+- model: sim.answer
+  pk: 885
+  fields:
+    question: 220
+    text: dataflow.compute
+    is_correct: false
+- model: sim.answer
+  pk: 886
+  fields:
+    question: 220
+    text: dataflow.developer
+    is_correct: false
+- model: sim.answer
+  pk: 887
+  fields:
+    question: 220
+    text: dataflow.viewer
+    is_correct: false
+
+- model: sim.question
+  pk: 221
+  fields:
+    quiz: 5
+    text: Does Dataflow process batch data pipelines or streaming data pipelines?
+- model: sim.answer
+  pk: 864
+  fields:
+    question: 221
+    text: Only Batch Data Pipelines
+    is_correct: false
+- model: sim.answer
+  pk: 865
+  fields:
+    question: 221
+    text: Both Batch and Streaming Data Pipelines
+    is_correct: true
+- model: sim.answer
+  pk: 866
+  fields:
+    question: 221
+    text: Only Streaming Data Pipelines
+    is_correct: false
+- model: sim.answer
+  pk: 867
+  fields:
+    question: 221
+    text: None of the above
+    is_correct: false
+
+- model: sim.question
+  pk: 222
+  fields:
+    quiz: 5
+    text: Which of the following is not true about Dataflow pipelines?
+- model: sim.answer
+  pk: 888
+  fields:
+    question: 222
+    text: Pipelines are a set of operations
+    is_correct: false
+- model: sim.answer
+  pk: 889
+  fields:
+    question: 222
+    text: Pipelines represent a data processing job
+    is_correct: false
+- model: sim.answer
+  pk: 890
+  fields:
+    question: 222
+    text: Pipelines represent a directed graph of steps
+    is_correct: false
+- model: sim.answer
+  pk: 891
+  fields:
+    question: 222
+    text: Pipelines can share data between instances
+    is_correct: true
+
+- model: sim.question
+  pk: 223
+  fields:
+    quiz: 5
+    text: By default, which of the following windowing behavior does Dataflow apply to unbounded data sets?
+- model: sim.answer
+  pk: 892
+  fields:
+    question: 223
+    text: Windows at every 100 MB of data
+    is_correct: false
+- model: sim.answer
+  pk: 893
+  fields:
+    question: 223
+    text: Single, Global Window
+    is_correct: true
+- model: sim.answer
+  pk: 894
+  fields:
+    question: 223
+    text: Windows at every 1 minute
+    is_correct: false
+- model: sim.answer
+  pk: 895
+  fields:
+    question: 223
+    text: Windows at every 10 minutes
+    is_correct: false
+
+- model: sim.question
+  pk: 224
+  fields:
+    quiz: 5
+    text: What are the minimum permissions needed for a service account used with Google Dataproc?
+- model: sim.answer
+  pk: 896
+  fields:
+    question: 224
+    text: Execute to Google Cloud Storage; write to Google Cloud Logging
+    is_correct: false
+- model: sim.answer
+  pk: 897
+  fields:
+    question: 224
+    text: Write to Google Cloud Storage; read to Google Cloud Logging
+    is_correct: false
+- model: sim.answer
+  pk: 898
+  fields:
+    question: 224
+    text: Execute to Google Cloud Storage; execute to Google Cloud Logging
+    is_correct: false
+- model: sim.answer
+  pk: 899
+  fields:
+    question: 224
+    text: Read and write to Google Cloud Storage; write to Google Cloud Logging
+    is_correct: true
+
+- model: sim.question
+  pk: 225
+  fields:
+    quiz: 5
+    text: Which role must be assigned to a service account used by the virtual machines in a Dataproc cluster so they can execute jobs?
+- model: sim.answer
+  pk: 900
+  fields:
+    question: 225
+    text: Dataproc Worker
+    is_correct: true
+- model: sim.answer
+  pk: 901
+  fields:
+    question: 225
+    text: Dataproc Viewer
+    is_correct: false
+- model: sim.answer
+  pk: 902
+  fields:
+    question: 225
+    text: Dataproc Runner
+    is_correct: false
+- model: sim.answer
+  pk: 903
+  fields:
+    question: 225
+    text: Dataproc Editor
+    is_correct: false
+
+- model: sim.question
+  pk: 226
+  fields:
+    quiz: 5
+    text: |
+      When creating a new Cloud Dataproc cluster with the projects.regions.clusters.create operation, these four values are required: project, region, name, and ____.
+- model: sim.answer
+  pk: 904
+  fields:
+    question: 226
+    text: zone
+    is_correct: true
+- model: sim.answer
+  pk: 905
+  fields:
+    question: 226
+    text: node
+    is_correct: false
+- model: sim.answer
+  pk: 906
+  fields:
+    question: 226
+    text: label
+    is_correct: false
+- model: sim.answer
+  pk: 907
+  fields:
+    question: 226
+    text: type
+    is_correct: false
+
+- model: sim.question
+  pk: 227
+  fields:
+    quiz: 5
+    text: Which Google Cloud Platform service is an alternative to Hadoop with Hive?
+- model: sim.answer
+  pk: 908
+  fields:
+    question: 227
+    text: Cloud Dataflow
+    is_correct: false
+- model: sim.answer
+  pk: 909
+  fields:
+    question: 227
+    text: Cloud Bigtable
+    is_correct: false
+- model: sim.answer
+  pk: 910
+  fields:
+    question: 227
+    text: BigQuery
+    is_correct: true
+- model: sim.answer
+  pk: 911
+  fields:
+    question: 227
+    text: Cloud Datastore
+    is_correct: false
+
+- model: sim.question
+  pk: 228
+  fields:
+    quiz: 5
+    text: When using Cloud Dataproc clusters, you can access the YARN web interface by configuring a browser to connect through a ____ proxy.
+- model: sim.answer
+  pk: 912
+  fields:
+    question: 228
+    text: HTTPS
+    is_correct: false
+- model: sim.answer
+  pk: 913
+  fields:
+    question: 228
+    text: VPN
+    is_correct: false
+- model: sim.answer
+  pk: 914
+  fields:
+    question: 228
+    text: SOCKS
+    is_correct: true
+- model: sim.answer
+  pk: 915
+  fields:
+    question: 228
+    text: HTTP
+    is_correct: false
+
+- model: sim.question
+  pk: 229
+  fields:
+    quiz: 5
+    text: Cloud Dataproc is a managed Apache Hadoop and Apache _____ service.
+- model: sim.answer
+  pk: 916
+  fields:
+    question: 229
+    text: Blaze
+    is_correct: false
+- model: sim.answer
+  pk: 917
+  fields:
+    question: 229
+    text: Spark
+    is_correct: true
+- model: sim.answer
+  pk: 918
+  fields:
+    question: 229
+    text: Fire
+    is_correct: false
+- model: sim.answer
+  pk: 919
+  fields:
+    question: 229
+    text: Ignite
+    is_correct: false
+
+
+- model: sim.question
+  pk: 230
+  fields:
+    quiz: 5
+    text: |
+      Dataproc clusters contain many configuration files. To update these files, you will need to use the --properties option. The format for the option is: file_prefix =_____.
+- model: sim.answer
+  pk: 920
+  fields:
+    question: 230
+    text: details
+    is_correct: false
+- model: sim.answer
+  pk: 921
+  fields:
+    question: 230
+    text: value
+    is_correct: true
+- model: sim.answer
+  pk: 922
+  fields:
+    question: 230
+    text: 'null'
+    is_correct: false
+- model: sim.answer
+  pk: 923
+  fields:
+    question: 230
+    text: id
+    is_correct: false
+
+- model: sim.question
+  pk: 231
+  fields:
+    quiz: 5
+    text: Scaling a Cloud Dataproc cluster typically involves ____.
+- model: sim.answer
+  pk: 924
+  fields:
+    question: 231
+    text: increasing or decreasing the number of worker nodes
+    is_correct: true
+- model: sim.answer
+  pk: 925
+  fields:
+    question: 231
+    text: increasing or decreasing the number of master nodes
+    is_correct: false
+- model: sim.answer
+  pk: 926
+  fields:
+    question: 231
+    text: moving memory to run more applications on a single node
+    is_correct: false
+- model: sim.answer
+  pk: 927
+  fields:
+    question: 231
+    text: deleting applications from unused nodes periodically
+    is_correct: false
+
+- model: sim.question
+  pk: 232
+  fields:
+    quiz: 5
+    text: Cloud Dataproc charges you only for what you really use with _____ billing.
+- model: sim.answer
+  pk: 928
+  fields:
+    question: 232
+    text: month-by-month
+    is_correct: false
+- model: sim.answer
+  pk: 929
+  fields:
+    question: 232
+    text: minute-by-minute
+    is_correct: true
+- model: sim.answer
+  pk: 930
+  fields:
+    question: 232
+    text: week-by-week
+    is_correct: false
+- model: sim.answer
+  pk: 931
+  fields:
+    question: 232
+    text: hour-by-hour
+    is_correct: false
+
+- model: sim.question
+  pk: 233
+  fields:
+    quiz: 5
+    text: The YARN ResourceManager and the HDFS NameNode interfaces are available on a Cloud Dataproc cluster ____.
+- model: sim.answer
+  pk: 932
+  fields:
+    question: 233
+    text: application node
+    is_correct: false
+- model: sim.answer
+  pk: 933
+  fields:
+    question: 233
+    text: conditional node
+    is_correct: false
+- model: sim.answer
+  pk: 934
+  fields:
+    question: 233
+    text: master node
+    is_correct: true
+- model: sim.answer
+  pk: 935
+  fields:
+    question: 233
+    text: worker node
+    is_correct: false
+
+- model: sim.question
+  pk: 234
+  fields:
+    quiz: 5
+    text: Which of these is NOT a way to customize the software on Dataproc cluster instances?
+- model: sim.answer
+  pk: 936
+  fields:
+    question: 234
+    text: Set initialization actions
+    is_correct: false
+- model: sim.answer
+  pk: 937
+  fields:
+    question: 234
+    text: Modify configuration files using cluster properties
+    is_correct: false
+- model: sim.answer
+  pk: 938
+  fields:
+    question: 234
+    text: Configure the cluster using Cloud Deployment Manager
+    is_correct: true
+- model: sim.answer
+  pk: 939
+  fields:
+    question: 234
+    text: Log into the master node and make changes from there
+    is_correct: false
+
+- model: sim.question
+  pk: 235
+  fields:
+    quiz: 5
+    text: In order to securely transfer web traffic data from your computer's web browser to the Cloud Dataproc cluster you should use a(n) _____.
+- model: sim.answer
+  pk: 940
+  fields:
+    question: 235
+    text: VPN connection
+    is_correct: false
+- model: sim.answer
+  pk: 941
+  fields:
+    question: 235
+    text: Special browser
+    is_correct: false
+- model: sim.answer
+  pk: 942
+  fields:
+    question: 235
+    text: SSH tunnel
+    is_correct: true
+- model: sim.answer
+  pk: 943
+  fields:
+    question: 235
+    text: FTP connection
+    is_correct: false
+
+- model: sim.question
+  pk: 236
+  fields:
+    quiz: 5
+    text: All Google Cloud Bigtable client requests go through a front-end server ______ they are sent to a Cloud Bigtable node.
+- model: sim.answer
+  pk: 944
+  fields:
+    question: 236
+    text: before
+    is_correct: true
+- model: sim.answer
+  pk: 945
+  fields:
+    question: 236
+    text: after
+    is_correct: false
+- model: sim.answer
+  pk: 946
+  fields:
+    question: 236
+    text: only if
+    is_correct: false
+- model: sim.answer
+  pk: 947
+  fields:
+    question: 236
+    text: once
+    is_correct: false
+
+- model: sim.question
+  pk: 237
+  fields:
+    quiz: 5
+    text: What is the general recommendation when designing your row keys for a Cloud Bigtable schema?
+- model: sim.answer
+  pk: 948
+  fields:
+    question: 237
+    text: Include multiple time series values within the row key
+    is_correct: false
+- model: sim.answer
+  pk: 949
+  fields:
+    question: 237
+    text: Keep the row key as an 8-bit integer
+    is_correct: false
+- model: sim.answer
+  pk: 950
+  fields:
+    question: 237
+    text: Keep your row key reasonably short
+    is_correct: true
+- model: sim.answer
+  pk: 951
+  fields:
+    question: 237
+    text: Keep your row key as long as the field permits
+    is_correct: false
+
+- model: sim.question
+  pk: 238
+  fields:
+    quiz: 5
+    text: Which of the following statements is NOT true regarding Bigtable access roles?
+- model: sim.answer
+  pk: 952
+  fields:
+    question: 238
+    text: Using IAM roles, you cannot give a user access to only one table in a project, rather than all tables in a project.
+    is_correct: false
+- model: sim.answer
+  pk: 953
+  fields:
+    question: 238
+    text: To give a user access to only one table in a project, grant the user the Bigtable Editor role for that table.
+    is_correct: true
+- model: sim.answer
+  pk: 954
+  fields:
+    question: 238
+    text: You can configure access control only at the project level.
+    is_correct: false
+- model: sim.answer
+  pk: 955
+  fields:
+    question: 238
+    text: To give a user access to only one table in a project, you must configure access through your application.
+    is_correct: false
+
+- model: sim.question
+  pk: 239
+  fields:
+    quiz: 5
+    text: For the best possible performance, what is the recommended zone for your Compute Engine instance and Cloud Bigtable instance?
+- model: sim.answer
+  pk: 956
+  fields:
+    question: 239
+    text: Have the Compute Engine instance in the furthest zone from the Cloud Bigtable instance.
+    is_correct: false
+- model: sim.answer
+  pk: 957
+  fields:
+    question: 239
+    text: Have both the Compute Engine instance and the Cloud Bigtable instance to be in different zones.
+    is_correct: false
+- model: sim.answer
+  pk: 958
+  fields:
+    question: 239
+    text: Have both the Compute Engine instance and the Cloud Bigtable instance to be in the same zone.
+    is_correct: true
+- model: sim.answer
+  pk: 959
+  fields:
+    question: 239
+    text: Have the Cloud Bigtable instance to be in the same zone as all of the consumers of your data.
+    is_correct: false
+
+
+- model: sim.question
+  pk: 241
+  fields:
+    quiz: 5
+    text: When a Cloud Bigtable node fails, ____ is lost.
+- model: sim.answer
+  pk: 964
+  fields:
+    question: 241
+    text: all data
+    is_correct: false
+- model: sim.answer
+  pk: 965
+  fields:
+    question: 241
+    text: no data
+    is_correct: true
+- model: sim.answer
+  pk: 966
+  fields:
+    question: 241
+    text: the last transaction
+    is_correct: false
+- model: sim.answer
+  pk: 967
+  fields:
+    question: 241
+    text: the time dimension
+    is_correct: false
+
+- model: sim.question
+  pk: 242
+  fields:
+    quiz: 5
+    text: Which is not a valid reason for poor Cloud Bigtable performance?
+- model: sim.answer
+  pk: 968
+  fields:
+    question: 242
+    text: The workload isn't appropriate for Cloud Bigtable.
+    is_correct: false
+- model: sim.answer
+  pk: 969
+  fields:
+    question: 242
+    text: The table's schema is not designed correctly.
+    is_correct: false
+- model: sim.answer
+  pk: 970
+  fields:
+    question: 242
+    text: The Cloud Bigtable cluster has too many nodes.
+    is_correct: true
+- model: sim.answer
+  pk: 971
+  fields:
+    question: 242
+    text: There are issues with the network connection.
+    is_correct: false
+
+- model: sim.question
+  pk: 243
+  fields:
+    quiz: 5
+    text: Which is the preferred method to use to avoid hotspotting in time series data in Bigtable?
+- model: sim.answer
+  pk: 972
+  fields:
+    question: 243
+    text: Field promotion
+    is_correct: true
+- model: sim.answer
+  pk: 973
+  fields:
+    question: 243
+    text: Randomization
+    is_correct: false
+- model: sim.answer
+  pk: 974
+  fields:
+    question: 243
+    text: Salting
+    is_correct: false
+- model: sim.answer
+  pk: 975
+  fields:
+    question: 243
+    text: Hashing
+    is_correct: false
+
+- model: sim.question
+  pk: 244
+  fields:
+    quiz: 5
+    text: When you design a Google Cloud Bigtable schema it is recommended that you _________.
+- model: sim.answer
+  pk: 976
+  fields:
+    question: 244
+    text: Avoid schema designs that are based on NoSQL concepts
+    is_correct: false
+- model: sim.answer
+  pk: 977
+  fields:
+    question: 244
+    text: Create schema designs that are based on a relational database design
+    is_correct: false
+- model: sim.answer
+  pk: 978
+  fields:
+    question: 244
+    text: Avoid schema designs that require atomicity across rows
+    is_correct: true
+- model: sim.answer
+  pk: 979
+  fields:
+    question: 244
+    text: Create schema designs that require atomicity across rows
+    is_correct: false
+
+- model: sim.question
+  pk: 245
+  fields:
+    quiz: 5
+    text: Which of the following is NOT a valid use case to select HDD (hard disk drives) as the storage for Google Cloud Bigtable?
+- model: sim.answer
+  pk: 980
+  fields:
+    question: 245
+    text: You expect to store at least 10 TB of data.
+    is_correct: false
+- model: sim.answer
+  pk: 981
+  fields:
+    question: 245
+    text: You will mostly run batch workloads with scans and writes, rather than frequently executing random reads of a small number of rows.
+    is_correct: false
+- model: sim.answer
+  pk: 982
+  fields:
+    question: 245
+    text: You need to integrate with Google BigQuery.
+    is_correct: true
+- model: sim.answer
+  pk: 983
+  fields:
+    question: 245
+    text: You will not use the data to back a user-facing or latency-sensitive application.
+    is_correct: false
+
+- model: sim.question
+  pk: 246
+  fields:
+    quiz: 5
+    text: Cloud Bigtable is Google's ______ Big Data database service.
+- model: sim.answer
+  pk: 984
+  fields:
+    question: 246
+    text: Relational
+    is_correct: false
+- model: sim.answer
+  pk: 985
+  fields:
+    question: 246
+    text: mySQL
+    is_correct: false
+- model: sim.answer
+  pk: 986
+  fields:
+    question: 246
+    text: NoSQL
+    is_correct: true
+- model: sim.answer
+  pk: 987
+  fields:
+    question: 246
+    text: SQL Server
+    is_correct: false
+
+- model: sim.question
+  pk: 247
+  fields:
+    quiz: 5
+    text: When you store data in Cloud Bigtable, what is the recommended minimum amount of stored data?
+- model: sim.answer
+  pk: 988
+  fields:
+    question: 247
+    text: 500 TB
+    is_correct: false
+- model: sim.answer
+  pk: 989
+  fields:
+    question: 247
+    text: 1 GB
+    is_correct: false
+- model: sim.answer
+  pk: 990
+  fields:
+    question: 247
+    text: 1 TB
+    is_correct: true
+- model: sim.answer
+  pk: 991
+  fields:
+    question: 247
+    text: 500 GB
+    is_correct: false
+
+- model: sim.question
+  pk: 248
+  fields:
+    quiz: 5
+    text: If you're running a performance test that depends upon Cloud Bigtable, all the choices except one below are recommended steps. Which is NOT a recommended step to follow?
+- model: sim.answer
+  pk: 992
+  fields:
+    question: 248
+    text: Do not use a production instance.
+    is_correct: true
+- model: sim.answer
+  pk: 993
+  fields:
+    question: 248
+    text: Run your test for at least 10 minutes.
+    is_correct: false
+- model: sim.answer
+  pk: 994
+  fields:
+    question: 248
+    text: Before you test, run a heavy pre-test for several minutes.
+    is_correct: false
+- model: sim.answer
+  pk: 995
+  fields:
+    question: 248
+    text: Use at least 300 GB of data.
+    is_correct: false
+
+- model: sim.question
+  pk: 249
+  fields:
+    quiz: 5
+    text: Cloud Bigtable is a recommended option for storing very large amounts of ____________________________?
+- model: sim.answer
+  pk: 996
+  fields:
+    question: 249
+    text: multi-keyed data with very high latency
+    is_correct: false
+- model: sim.answer
+  pk: 997
+  fields:
+    question: 249
+    text: multi-keyed data with very low latency
+    is_correct: false
+- model: sim.answer
+  pk: 998
+  fields:
+    question: 249
+    text: single-keyed data with very low latency
+    is_correct: true
+- model: sim.answer
+  pk: 999
+  fields:
+    question: 249
+    text: single-keyed data with very high latency
+    is_correct: false
+
+- model: sim.question
+  pk: 250
+  fields:
+    quiz: 5
+    text: Google Cloud Bigtable indexes a single value in each row. This value is called the _______.
+- model: sim.answer
+  pk: 1000
+  fields:
+    question: 250
+    text: primary key
+    is_correct: false
+- model: sim.answer
+  pk: 1001
+  fields:
+    question: 250
+    text: unique key
+    is_correct: false
+- model: sim.answer
+  pk: 1002
+  fields:
+    question: 250
+    text: row key
+    is_correct: true
+- model: sim.answer
+  pk: 1003
+  fields:
+    question: 250
+    text: master key
+    is_correct: false
+
+- model: sim.question
+  pk: 251
+  fields:
+    quiz: 5
+    text: What is the HBase Shell for Cloud Bigtable?
+- model: sim.answer
+  pk: 1004
+  fields:
+    question: 251
+    text: The HBase shell is a GUI-based interface that performs administrative tasks, such as creating and deleting tables.
+    is_correct: false
+- model: sim.answer
+  pk: 1005
+  fields:
+    question: 251
+    text: The HBase shell is a command-line tool that performs administrative tasks, such as creating and deleting tables.
+    is_correct: true
+- model: sim.answer
+  pk: 1006
+  fields:
+    question: 251
+    text: The HBase shell is a hypervisor-based shell that performs administrative tasks, such as creating and deleting new virtualized instances.
+    is_correct: false
+- model: sim.answer
+  pk: 1007
+  fields:
+    question: 251
+    text: The HBase shell is a command-line tool that performs only user account management functions to grant access to Cloud Bigtable instances.
+    is_correct: false
+
+
+- model: sim.question
+  pk: 252
+  fields:
+    quiz: 5
+    text: What is the recommended action to do in order to switch between SSD and HDD storage for your Google Cloud Bigtable instance?
+- model: sim.answer
+  pk: 1008
+  fields:
+    question: 252
+    text: Create a third instance and sync the data from the two storage types via batch jobs
+    is_correct: false
+- model: sim.answer
+  pk: 1009
+  fields:
+    question: 252
+    text: Export the data from the existing instance and import the data into a new instance
+    is_correct: true
+- model: sim.answer
+  pk: 1010
+  fields:
+    question: 252
+    text: Run parallel instances where one is HDD and the other is SSD
+    is_correct: false
+- model: sim.answer
+  pk: 1011
+  fields:
+    question: 252
+    text: The selection is final and you must resume using the same storage type
+    is_correct: false
+
+- model: sim.question
+  pk: 253
+  fields:
+    quiz: 5
+    text: Your company has recently grown rapidly and now ingesting data at a significantly higher rate than it was previously. You manage the daily batch MapReduce analytics jobs in Apache Hadoop. However, the recent increase in data has meant the batch jobs are falling behind. You were asked to recommend ways the development team could increase the responsiveness of the analytics without increasing costs. What should you recommend they do?
+- model: sim.answer
+  pk: 1012
+  fields:
+    question: 253
+    text: Rewrite the job in Pig.
+    is_correct: false
+- model: sim.answer
+  pk: 1013
+  fields:
+    question: 253
+    text: Rewrite the job in Apache Spark.
+    is_correct: true
+- model: sim.answer
+  pk: 1014
+  fields:
+    question: 253
+    text: Increase the size of the Hadoop cluster.
+    is_correct: false
+- model: sim.answer
+  pk: 1015
+  fields:
+    question: 253
+    text: Decrease the size of the Hadoop cluster but also rewrite the job in Hive.
+    is_correct: false
+
+- model: sim.question
+  pk: 254
+  fields:
+    quiz: 5
+    text: You work for a large fast food restaurant chain with over 400,000 employees. You store employee information in Google BigQuery in a Users table consisting of a FirstName field and a LastName field. A member of IT is building an application and asks you to modify the schema and data in BigQuery so the application can query a FullName field consisting of the value of the FirstName field concatenated with a space, followed by the value of the LastName field for each employee. How can you make that data available while minimizing cost?
+- model: sim.answer
+  pk: 1016
+  fields:
+    question: 254
+    text: Create a view in BigQuery that concatenates the FirstName and LastName field values to produce the FullName.
+    is_correct: true
+- model: sim.answer
+  pk: 1017
+  fields:
+    question: 254
+    text: Add a new column called FullName to the Users table. Run an UPDATE statement that updates the FullName column for each user with the concatenation of the FirstName and LastName values.
+    is_correct: false
+- model: sim.answer
+  pk: 1018
+  fields:
+    question: 254
+    text: Create a Google Cloud Dataflow job that queries BigQuery for the entire Users table, concatenates the FirstName value and LastName value for each user, and loads the proper values for FirstName, LastName, and FullName into a new table in BigQuery.
+    is_correct: false
+- model: sim.answer
+  pk: 1019
+  fields:
+    question: 254
+    text: Use BigQuery to export the data for the table to a CSV file. Create a Google Cloud Dataproc job to process the CSV file and output a new CSV file containing the proper values for FirstName, LastName and FullName. Run a BigQuery load job to load the new CSV file into BigQuery.
+    is_correct: false
+
+
+- model: sim.question
+  pk: 262
+  fields:
+    quiz: 5
+    text: You are deploying a new storage system for your mobile application, which is a media streaming service. You decide the best fit is Google Cloud Datastore. You have entities with multiple properties, some of which can take on multiple values. For example, in the entity 'Movie' the property 'actors' and the property 'tags' have multiple values but the property 'date released' does not. A typical query would ask for all movies with actor=<actorname> ordered by date_released or all movies with tag=Comedy ordered by date_released. How should you avoid a combinatorial explosion in the number of indexes?
+- model: sim.answer
+  pk: 1048
+  fields:
+    question: 262
+    text: |
+      Manually configure the index in your index config as follows:
+      Indexes:
+        - Kind: Movie
+        properties:
+        - name: actors
+        - name: date_released
+        - Kind: Movie
+        properties:
+        - name: tags
+        - name: date_released
+    is_correct: true
+- model: sim.answer
+  pk: 1049
+  fields:
+    question: 262
+    text: |
+      Manually configure the index in your index config as follows:
+      Indexes:
+      - Kind: Movie
+        properties:
+        - name: actors
+        - name: tags
+        - name: date_published
+    is_correct: false
+- model: sim.answer
+  pk: 1050
+  fields:
+    question: 262
+    text: |
+      Set the following in your entity options: exclude_from_indexes = 'actors, tags'
+    is_correct: false
+- model: sim.answer
+  pk: 1051
+  fields:
+    question: 262
+    text: |
+      Set the following in your entity options: exclude_from_indexes = 'date_published'
+    is_correct: false
+
+- model: sim.question
+  pk: 263
+  fields:
+    quiz: 5
+    text: You work for a manufacturing plant that batches application log files together into a single log file once a day at 2:00 AM. You have written a Google Cloud Dataflow job to process that log file. You need to make sure the log file is processed once per day as inexpensively as possible. What should you do?
+- model: sim.answer
+  pk: 1052
+  fields:
+    question: 263
+    text: Change the processing job to use Google Cloud Dataproc instead.
+    is_correct: false
+- model: sim.answer
+  pk: 1053
+  fields:
+    question: 263
+    text: Manually start the Cloud Dataflow job each morning when you get into the office.
+    is_correct: false
+- model: sim.answer
+  pk: 1054
+  fields:
+    question: 263
+    text: Create a cron job with Google App Engine Cron Service to run the Cloud Dataflow job.
+    is_correct: true
+- model: sim.answer
+  pk: 1055
+  fields:
+    question: 263
+    text: Configure the Cloud Dataflow job as a streaming job so that it processes the log data immediately.
+    is_correct: false
+
+
+- model: sim.question
+  pk: 264
+  fields:
+    quiz: 5
+    text: |
+      "You work for an economic consulting firm that helps companies identify economic trends as they happen. As part of your analysis, you use Google BigQuery to correlate customer data with the average prices of the 100 most common goods sold, including bread, gasoline, milk, and others. The average prices of these goods are updated every 30 minutes. You want to make sure this data stays up to date so you can combine it with other data in BigQuery as cheaply as possible. What should you do?"
+    
+- model: sim.answer
+  pk: 1056
+  fields:
+    question: 264
+    text: "Load the data every 30 minutes into a new partitioned table in BigQuery."
+    is_correct: false
+
+- model: sim.answer
+  pk: 1057
+  fields:
+    question: 264
+    text: "Store and update the data in a regional Google Cloud Storage bucket and create a federated data source in BigQuery."
+    is_correct: true
+
+- model: sim.answer
+  pk: 1058
+  fields:
+    question: 264
+    text: "Store the data in Google Cloud Datastore. Use Google Cloud Dataflow to query BigQuery and combine the data programmatically with the data stored in Cloud Datastore."
+    is_correct: false
+
+- model: sim.answer
+  pk: 1059
+  fields:
+    question: 264
+    text: "Store the data in a file in a regional Google Cloud Storage bucket. Use Cloud Dataflow to query BigQuery and combine the data programmatically with the data stored in Google Cloud Storage."
+    is_correct: false
+
+- model: sim.question
+  pk: 265
+  fields:
+    quiz: 5
+    text: "You are designing the database schema for a machine learning-based food ordering service that will predict what users want to eat. Here is some of the information you need to store: The user profile: What the user likes and doesn't like to eat; The user account information: Name, address, preferred meal times; The order information: When orders are made, from where, to whom. The database will be used to store all the transactional data of the product. You want to optimize the data schema. Which Google Cloud Platform product should you use?"
+
+- model: sim.answer
+  pk: 1060
+  fields:
+    question: 265
+    text: "BigQuery"
+    is_correct: false
+
+- model: sim.answer
+  pk: 1061
+  fields:
+    question: 265
+    text: "Cloud SQL"
+    is_correct: true
+
+- model: sim.answer
+  pk: 1062
+  fields:
+    question: 265
+    text: "Cloud Bigtable"
+    is_correct: false
+
+- model: sim.answer
+  pk: 1063
+  fields:
+    question: 265
+    text: "Cloud Datastore"
+    is_correct: false

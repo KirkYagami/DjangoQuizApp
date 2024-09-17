@@ -1,0 +1,1776 @@
+- model: sim.quiz
+  pk: 2
+  fields:
+    name: GCC PDE Quiz 02
+- model: sim.question
+  pk: 52
+  fields:
+    quiz: 2
+    text: You need to choose a database to store time series CPU and memory usage
+      for millions of computers. You need to store this data in one-second interval
+      samples. Analysts will be performing real-time, ad hoc analytics against the
+      database. You want to avoid being charged for every query executed and ensure
+      that the schema design will allow for future growth of the dataset. Which database
+      and data model should you choose?
+- model: sim.answer
+  pk: 207
+  fields:
+    question: 52
+    text: Create a table in BigQuery, and append the new samples for CPU and memory
+      to the table
+    is_correct: false
+- model: sim.answer
+  pk: 208
+  fields:
+    question: 52
+    text: Create a wide table in BigQuery, create a column for the sample value at
+      each second, and update the row with the interval for each second
+    is_correct: false
+- model: sim.answer
+  pk: 209
+  fields:
+    question: 52
+    text: Create a narrow table in Bigtable with a row key that combines the Computer
+      Engine computer identifier with the sample time at each second
+    is_correct: true
+- model: sim.answer
+  pk: 210
+  fields:
+    question: 52
+    text: Create a wide table in Bigtable with a row key that combines the computer
+      identifier with the sample time at each minute, and combine the values for each
+      second as column data
+    is_correct: false
+- model: sim.question
+  pk: 53
+  fields:
+    quiz: 2
+    text: You want to archive data in Cloud Storage. Because some data is very sensitive,
+      you want to use the `Trust No One` (TNO) approach to encrypt your data to prevent
+      the cloud provider staff from decrypting your data. What should you do?
+- model: sim.answer
+  pk: 211
+  fields:
+    question: 53
+    text: Use gcloud kms keys create to create a symmetric key. Then use gcloud kms
+      encrypt to encrypt each archival file with the key and unique additional authenticated
+      data (AAD). Use gsutil cp to upload each encrypted file to the Cloud Storage
+      bucket, and keep the AAD outside of Google Cloud.
+    is_correct: false
+- model: sim.answer
+  pk: 212
+  fields:
+    question: 53
+    text: Use gcloud kms keys create to create a symmetric key. Then use gcloud kms
+      encrypt to encrypt each archival file with the key. Use gsutil cp to upload
+      each encrypted file to the Cloud Storage bucket. Manually destroy the key previously
+      used for encryption, and rotate the key once.
+    is_correct: false
+- model: sim.answer
+  pk: 213
+  fields:
+    question: 53
+    text: Specify customer-supplied encryption key (CSEK) in the .boto configuration
+      file. Use gsutil cp to upload each archival file to the Cloud Storage bucket.
+      Save the CSEK in Cloud Memorystore as permanent storage of the secret.
+    is_correct: false
+- model: sim.answer
+  pk: 214
+  fields:
+    question: 53
+    text: Specify customer-supplied encryption key (CSEK) in the .boto configuration
+      file. Use gsutil cp to upload each archival file to the Cloud Storage bucket.
+      Save the CSEK in a different project that only the security team can access.
+    is_correct: true
+- model: sim.question
+  pk: 54
+  fields:
+    quiz: 2
+    text: You have data pipelines running on BigQuery, Dataflow, and Dataproc. You
+      need to perform health checks and monitor their behavior, and then notify the
+      team managing the pipelines if they fail. You also need to be able to work across
+      multiple projects. Your preference is to use managed products or features of
+      the platform. What should you do?
+- model: sim.answer
+  pk: 215
+  fields:
+    question: 54
+    text: Export the information to Cloud Monitoring, and set up an Alerting policy
+    is_correct: true
+- model: sim.answer
+  pk: 216
+  fields:
+    question: 54
+    text: Run a Virtual Machine in Compute Engine with Airflow, and export the information
+      to Cloud Monitoring
+    is_correct: false
+- model: sim.answer
+  pk: 217
+  fields:
+    question: 54
+    text: Export the logs to BigQuery, and set up App Engine to read that information
+      and send emails if you find a failure in the logs
+    is_correct: false
+- model: sim.answer
+  pk: 218
+  fields:
+    question: 54
+    text: Develop an App Engine application to consume logs using GCP API calls, and
+      send emails if you find a failure in the logs
+    is_correct: false
+- model: sim.question
+  pk: 55
+  fields:
+    quiz: 2
+    text: You are working on a linear regression model on BigQuery ML to predict a
+      customer's likelihood of purchasing your company's products. Your model uses
+      a city name variable as a key predictive component. In order to train and serve
+      the model, your data must be organized in columns. You want to prepare your
+      data using the least amount of coding while maintaining the predictable variables.
+      What should you do?
+- model: sim.answer
+  pk: 219
+  fields:
+    question: 55
+    text: Create a new view with BigQuery that does not include a column with city
+      information.
+    is_correct: false
+- model: sim.answer
+  pk: 220
+  fields:
+    question: 55
+    text: Use SQL in BigQuery to transform the state column using a one-hot encoding
+      method, and make each city a column with binary values.
+    is_correct: true
+- model: sim.answer
+  pk: 221
+  fields:
+    question: 55
+    text: Use TensorFlow to create a categorical variable with a vocabulary list.
+      Create the vocabulary file and upload that as part of your model to BigQuery
+      ML.
+    is_correct: false
+- model: sim.answer
+  pk: 222
+  fields:
+    question: 55
+    text: Use Cloud Data Fusion to assign each city to a region that is labeled as
+      1, 2, 3, 4, or 5, and then use that number to represent the city in the model.
+    is_correct: false
+- model: sim.question
+  pk: 56
+  fields:
+    quiz: 2
+    text: You work for a large bank that operates in locations throughout North America.
+      You are setting up a data storage system that will handle bank account transactions.
+      You require ACID compliance and the ability to access data with SQL. Which solution
+      is appropriate?
+- model: sim.answer
+  pk: 223
+  fields:
+    question: 56
+    text: Store transaction data in Cloud Spanner. Enable stale reads to reduce latency.
+    is_correct: false
+- model: sim.answer
+  pk: 224
+  fields:
+    question: 56
+    text: Store transaction in Cloud Spanner. Use locking read-write transactions.
+    is_correct: true
+- model: sim.answer
+  pk: 225
+  fields:
+    question: 56
+    text: Store transaction data in BigQuery. Disabled the query cache to ensure consistency.
+    is_correct: false
+- model: sim.answer
+  pk: 226
+  fields:
+    question: 56
+    text: Store transaction data in Cloud SQL. Use a federated query BigQuery for
+      analysis.
+    is_correct: false
+- model: sim.question
+  pk: 57
+  fields:
+    quiz: 2
+    text: A shipping company has live package-tracking data that is sent to an Apache
+      Kafka stream in real time. This is then loaded into BigQuery. Analysts in your
+      company want to query the tracking data in BigQuery to analyze geospatial trends
+      in the lifecycle of a package. The table was originally created with ingest-date
+      partitioning. Over time, the query processing time has increased. You need to
+      implement a change that would improve query performance in BigQuery. What should
+      you do?
+- model: sim.answer
+  pk: 227
+  fields:
+    question: 57
+    text: Implement clustering in BigQuery on the ingest date column.
+    is_correct: false
+- model: sim.answer
+  pk: 228
+  fields:
+    question: 57
+    text: Implement clustering in BigQuery on the package-tracking ID column.
+    is_correct: true
+- model: sim.answer
+  pk: 229
+  fields:
+    question: 57
+    text: Tier older data onto Cloud Storage files and create a BigQuery table using
+      Cloud Storage as an external data source.
+    is_correct: false
+- model: sim.answer
+  pk: 230
+  fields:
+    question: 57
+    text: Re-create the table using data partitioning on the package delivery date.
+    is_correct: false
+- model: sim.question
+  pk: 58
+  fields:
+    quiz: 2
+    text: Your company currently runs a large on-premises cluster using Spark, Hive,
+      and HDFS in a colocation facility. The cluster is designed to accommodate peak
+      usage on the system; however, many jobs are batch in nature, and usage of the
+      cluster fluctuates quite dramatically. Your company is eager to move to the
+      cloud to reduce the overhead associated with on-premises infrastructure and
+      maintenance and to benefit from the cost savings. They are also hoping to modernize
+      their existing infrastructure to use more serverless offerings in order to take
+      advantage of the cloud. Because of the timing of their contract renewal with
+      the colocation facility, they have only 2 months for their initial migration.
+      How would you recommend they approach their upcoming migration strategy so they
+      can maximize their cost savings in the cloud while still executing the migration
+      in time?
+- model: sim.answer
+  pk: 231
+  fields:
+    question: 58
+    text: Migrate the workloads to Dataproc plus HDFS; modernize later.
+    is_correct: false
+- model: sim.answer
+  pk: 232
+  fields:
+    question: 58
+    text: Migrate the workloads to Dataproc plus Cloud Storage; modernize later.
+    is_correct: true
+- model: sim.answer
+  pk: 233
+  fields:
+    question: 58
+    text: Migrate the Spark workload to Dataproc plus HDFS, and modernize the Hive
+      workload for BigQuery.
+    is_correct: false
+- model: sim.answer
+  pk: 234
+  fields:
+    question: 58
+    text: Modernize the Spark workload for Dataflow and the Hive workload for BigQuery.
+    is_correct: false
+- model: sim.question
+  pk: 59
+  fields:
+    quiz: 2
+    text: You work for a financial institution that lets customers register online.
+      As new customers register, their user data is sent to Pub/Sub before being ingested
+      into BigQuery. For security reasons, you decide to redact your customers' Government
+      issued Identification Number while allowing customer service representatives
+      to view the original values when necessary. What should you do?
+- model: sim.answer
+  pk: 235
+  fields:
+    question: 59
+    text: Use BigQuery's built-in AEAD encryption to encrypt the SSN column. Save
+      the keys to a new table that is only viewable by permissioned users.
+    is_correct: false
+- model: sim.answer
+  pk: 236
+  fields:
+    question: 59
+    text: Use BigQuery column-level security. Set the table permissions so that only
+      members of the Customer Service user group can see the SSN column.
+    is_correct: true
+- model: sim.answer
+  pk: 237
+  fields:
+    question: 59
+    text: Before loading the data into BigQuery, use Cloud Data Loss Prevention (DLP)
+      to replace input values with a cryptographic hash.
+    is_correct: false
+- model: sim.answer
+  pk: 238
+  fields:
+    question: 59
+    text: Before loading the data into BigQuery, use Cloud Data Loss Prevention (DLP)
+      to replace input values with a cryptographic format-preserving encryption token.
+    is_correct: false
+- model: sim.question
+  pk: 60
+  fields:
+    quiz: 2
+    text: You are migrating a table to BigQuery and are deciding on the data model.
+      Your table stores information related to purchases made across several store
+      locations and includes information like the time of the transaction, items purchased,
+      the store ID, and the city and state in which the store is located. You frequently
+      query this table to see how many of each item were sold over the past 30 days
+      and to look at purchasing trends by state, city, and individual store. How would
+      you model this table for the best query performance?
+- model: sim.answer
+  pk: 239
+  fields:
+    question: 60
+    text: Partition by transaction time; cluster by state first, then city, then store
+      ID.
+    is_correct: true
+- model: sim.answer
+  pk: 240
+  fields:
+    question: 60
+    text: Partition by transaction time; cluster by store ID first, then city, then
+      state.
+    is_correct: false
+- model: sim.answer
+  pk: 241
+  fields:
+    question: 60
+    text: Top-level cluster by state first, then city, then store ID.
+    is_correct: false
+- model: sim.answer
+  pk: 242
+  fields:
+    question: 60
+    text: Top-level cluster by store ID first, then city, then state.
+    is_correct: false
+- model: sim.question
+  pk: 61
+  fields:
+    quiz: 2
+    text: You are updating the code for a subscriber to a Pub/Sub feed. You are concerned
+      that upon deployment the subscriber may erroneously acknowledge messages, leading
+      to message loss. Your subscriber is not set up to retain acknowledged messages.
+      What should you do to ensure that you can recover from errors after deployment?
+- model: sim.answer
+  pk: 243
+  fields:
+    question: 61
+    text: Set up the Pub/Sub emulator on your local machine. Validate the behavior
+      of your new subscriber logic before deploying it to production.
+    is_correct: false
+- model: sim.answer
+  pk: 244
+  fields:
+    question: 61
+    text: Create a Pub/Sub snapshot before deploying new subscriber code. Use a Seek
+      operation to re-deliver messages that became available after the snapshot was
+      created.
+    is_correct: true
+- model: sim.answer
+  pk: 245
+  fields:
+    question: 61
+    text: Use Cloud Build for your deployment. If an error occurs after deployment,
+      use a Seek operation to locate a timestamp logged by Cloud Build at the start
+      of the deployment.
+    is_correct: false
+- model: sim.answer
+  pk: 246
+  fields:
+    question: 61
+    text: Enable dead-lettering on the Pub/Sub topic to capture messages that aren't
+      successfully acknowledged. If an error occurs after deployment, re-deliver any
+      messages captured by the dead-letter queue.
+    is_correct: false
+- model: sim.question
+  pk: 62
+  fields:
+    quiz: 2
+    text: You work for a large real estate firm and are preparing 6 TB of home sales
+      data to be used for machine learning. You will use SQL to transform the data
+      and use BigQuery ML to create a machine learning model. You plan to use the
+      model for predictions against a raw dataset that has not been transformed. How
+      should you set up your workflow in order to prevent skew at prediction time?
+- model: sim.answer
+  pk: 247
+  fields:
+    question: 62
+    text: When creating your model, use BigQuery's TRANSFORM clause to define preprocessing
+      steps. At prediction time, use BigQuery's ML.EVALUATE clause without specifying
+      any transformations on the raw input data.
+    is_correct: true
+- model: sim.answer
+  pk: 248
+  fields:
+    question: 62
+    text: When creating your model, use BigQuery's TRANSFORM clause to define preprocessing
+      steps. Before requesting predictions, use a saved query to transform your raw
+      input data, and then use ML.EVALUATE.
+    is_correct: false
+- model: sim.answer
+  pk: 249
+  fields:
+    question: 62
+    text: Use a BigQuery view to define your preprocessing logic. When creating your
+      model, use the view as your model training data. At prediction time, use BigQuery's
+      ML.EVALUATE clause without specifying any transformations on the raw input data.
+    is_correct: false
+- model: sim.answer
+  pk: 250
+  fields:
+    question: 62
+    text: Preprocess all data using Dataflow. At prediction time, use BigQuery's ML.EVALUATE
+      clause without specifying any further transformations on the input data.
+    is_correct: false
+- model: sim.question
+  pk: 63
+  fields:
+    quiz: 2
+    text: You are analyzing the price of a company's stock. Every 5 seconds, you need
+      to compute a moving average of the past 30 seconds' worth of data. You are reading
+      data from Pub/Sub and using DataFlow to conduct the analysis. How should you
+      set up your windowed pipeline?
+- model: sim.answer
+  pk: 251
+  fields:
+    question: 63
+    text: 'Use a fixed window with a duration of 5 seconds. Emit results by setting
+      the following trigger- AfterProcessingTime.pastFirstElementInPane().plusDelayOf(Duration.standardSeconds(30))'
+    is_correct: false
+- model: sim.answer
+  pk: 252
+  fields:
+    question: 63
+    text: 'Use a fixed window with a duration of 30 seconds. Emit results by setting
+      the following trigger- AfterWatermark.pastEndOfWindow().plusDelayOf(Duration.standardSeconds(5))'
+    is_correct: false
+- model: sim.answer
+  pk: 253
+  fields:
+    question: 63
+    text: 'Use a sliding window with a duration of 5 seconds. Emit results by setting
+      the following trigger- AfterProcessingTime.pastFirstElementInPane().plusDelayOf(Duration.standardSeconds(30))'
+    is_correct: false
+- model: sim.answer
+  pk: 254
+  fields:
+    question: 63
+    text: 'Use a sliding window with a duration of 30 seconds and a period of 5 seconds.
+      Emit results by setting the following trigger- AfterWatermark.pastEndOfWindow()'
+    is_correct: true
+- model: sim.question
+  pk: 64
+  fields:
+    quiz: 2
+    text: You are designing a pipeline that publishes application events to a Pub/Sub
+      topic. Although message ordering is not important, you need to be able to aggregate
+      events across disjoint hourly intervals before loading the results to BigQuery
+      for analysis. What technology should you use to process and load this data to
+      BigQuery while ensuring that it will scale with large volumes of events?
+- model: sim.answer
+  pk: 255
+  fields:
+    question: 64
+    text: Create a Cloud Function to perform the necessary data processing that executes
+      using the Pub/Sub trigger every time a new message is published to the topic.
+    is_correct: false
+- model: sim.answer
+  pk: 256
+  fields:
+    question: 64
+    text: Schedule a Cloud Function to run hourly, pulling all available messages
+      from the Pub/Sub topic and performing the necessary aggregations.
+    is_correct: false
+- model: sim.answer
+  pk: 257
+  fields:
+    question: 64
+    text: Schedule a batch Dataflow job to run hourly, pulling all available messages
+      from the Pub/Sub topic and performing the necessary aggregations.
+    is_correct: false
+- model: sim.answer
+  pk: 258
+  fields:
+    question: 64
+    text: Create a streaming Dataflow job that reads continually from the Pub/Sub
+      topic and performs the necessary aggregations using tumbling windows.
+    is_correct: true
+- model: sim.question
+  pk: 65
+  fields:
+    quiz: 2
+    text: You work for a large financial institution that is planning to use Dialogflow
+      to create a chatbot for the company's mobile app. You have reviewed old chat
+      logs and tagged each conversation for intent based on each customer's stated
+      intention for contacting customer service. About 70% of customer requests are
+      simple requests that are solved within 10 intents. The remaining 30% of inquiries
+      require much longer, more complicated requests. Which intents should you automate
+      first?
+- model: sim.answer
+  pk: 259
+  fields:
+    question: 65
+    text: Automate the 10 intents that cover 70% of the requests so that live agents
+      can handle more complicated requests.
+    is_correct: true
+- model: sim.answer
+  pk: 260
+  fields:
+    question: 65
+    text: Automate the more complicated requests first because those require more
+      of the agents' time.
+    is_correct: false
+- model: sim.answer
+  pk: 261
+  fields:
+    question: 65
+    text: Automate a blend of the shortest and longest intents to be representative
+      of all intents.
+    is_correct: false
+- model: sim.answer
+  pk: 262
+  fields:
+    question: 65
+    text: Automate intents in places where common words such as 'payment' appear only
+      once so the software isn't confused.
+    is_correct: false
+- model: sim.question
+  pk: 66
+  fields:
+    quiz: 2
+    text: Your company is implementing a data warehouse using BigQuery, and you have
+      been tasked with designing the data model. You move your on-premises sales data
+      warehouse with a star data schema to BigQuery but notice performance issues
+      when querying the data of the past 30 days. Based on Google's recommended practices,
+      what should you do to speed up the query without increasing storage costs?
+- model: sim.answer
+  pk: 263
+  fields:
+    question: 66
+    text: Denormalize the data.
+    is_correct: true
+- model: sim.answer
+  pk: 264
+  fields:
+    question: 66
+    text: Shard the data by customer ID.
+    is_correct: false
+- model: sim.answer
+  pk: 265
+  fields:
+    question: 66
+    text: Materialize the dimensional data in views.
+    is_correct: false
+- model: sim.answer
+  pk: 266
+  fields:
+    question: 66
+    text: Partition the data by transaction date.
+    is_correct: true
+- model: sim.question
+  pk: 67
+  fields:
+    quiz: 2
+    text: You have uploaded 5 years of log data to Cloud Storage. A user reported
+      that some data points in the log data are outside of their expected ranges,
+      which indicates errors. You need to address this issue and be able to run the
+      process again in the future while keeping the original data for compliance reasons.
+      What should you do?
+- model: sim.answer
+  pk: 267
+  fields:
+    question: 67
+    text: Import the data from Cloud Storage into BigQuery. Create a new BigQuery
+      table, and skip the rows with errors.
+    is_correct: false
+- model: sim.answer
+  pk: 268
+  fields:
+    question: 67
+    text: Create a Compute Engine instance and create a new copy of the data in Cloud
+      Storage. Skip the rows with errors.
+    is_correct: true
+- model: sim.answer
+  pk: 269
+  fields:
+    question: 67
+    text: Create a Dataflow workflow that reads the data from Cloud Storage, checks
+      for values outside the expected range, sets the value to an appropriate default,
+      and writes the updated records to a new dataset in Cloud Storage.
+    is_correct: true
+- model: sim.answer
+  pk: 270
+  fields:
+    question: 67
+    text: Create a Dataflow workflow that reads the data from Cloud Storage, checks
+      for values outside the expected range, sets the value to an appropriate default,
+      and writes the updated records to the same dataset in Cloud Storage.
+    is_correct: false
+- model: sim.question
+  pk: 68
+  fields:
+    quiz: 2
+    text: You want to rebuild your batch pipeline for structured data on Google Cloud.
+      You are using PySpark to conduct data transformations at scale, but your pipelines
+      are taking over twelve hours to run. To expedite development and pipeline run
+      time, you want to use a serverless tool and SQL syntax. You have already moved
+      your raw data into Cloud Storage. How should you build the pipeline on Google
+      Cloud while meeting speed and processing requirements?
+- model: sim.answer
+  pk: 271
+  fields:
+    question: 68
+    text: Convert your PySpark commands into SparkSQL queries to transform the data,
+      and then run your pipeline on Dataproc to write the data into BigQuery.
+    is_correct: true
+- model: sim.answer
+  pk: 272
+  fields:
+    question: 68
+    text: Ingest your data into Cloud SQL, convert your PySpark commands into SparkSQL
+      queries to transform the data, and then use federated queries from BigQuery
+      for machine learning.
+    is_correct: false
+- model: sim.answer
+  pk: 273
+  fields:
+    question: 68
+    text: Ingest your data into BigQuery from Cloud Storage, convert your PySpark
+      commands into BigQuery SQL queries to transform the data, and then write the
+      transformations to a new table.
+    is_correct: true
+- model: sim.answer
+  pk: 274
+  fields:
+    question: 68
+    text: Use Apache Beam Python SDK to build the transformation pipelines, and write
+      the data into BigQuery.
+    is_correct: false
+- model: sim.question
+  pk: 69
+  fields:
+    quiz: 2
+    text: You are testing a Dataflow pipeline to ingest and transform text files.
+      The files are compressed gzip, errors are written to a dead-letter queue, and
+      you are using SideInputs to join data. You noticed that the pipeline is taking
+      longer to complete than expected; what should you do to expedite the Dataflow
+      job?
+- model: sim.answer
+  pk: 275
+  fields:
+    question: 69
+    text: Switch to compressed Avro files.
+    is_correct: false
+- model: sim.answer
+  pk: 276
+  fields:
+    question: 69
+    text: Reduce the batch size.
+    is_correct: false
+- model: sim.answer
+  pk: 277
+  fields:
+    question: 69
+    text: Retry records that throw an error.
+    is_correct: false
+- model: sim.answer
+  pk: 278
+  fields:
+    question: 69
+    text: Use CoGroupByKey instead of the SideInput.
+    is_correct: true
+- model: sim.question
+  pk: 70
+  fields:
+    quiz: 2
+    text: You are building a real-time prediction engine that streams files, which
+      may contain PII (personal identifiable information) data, into Cloud Storage
+      and eventually into BigQuery. You want to ensure that the sensitive data is
+      masked but still maintains referential integrity, because names and emails are
+      often used as join keys. How should you use the Cloud Data Loss Prevention API
+      (DLP API) to ensure that the PII data is not accessible by unauthorized individuals?
+- model: sim.answer
+  pk: 279
+  fields:
+    question: 70
+    text: Create a pseudonym by replacing the PII data with cryptogenic tokens, and
+      store the non-tokenized data in a locked-down bucket.
+    is_correct: false
+- model: sim.answer
+  pk: 280
+  fields:
+    question: 70
+    text: Redact all PII data, and store a version of the unredacted data in a locked-down
+      bucket.
+    is_correct: false
+- model: sim.answer
+  pk: 281
+  fields:
+    question: 70
+    text: Scan every table in BigQuery, and mask the data it finds that has PII.
+    is_correct: false
+- model: sim.answer
+  pk: 282
+  fields:
+    question: 70
+    text: Create a pseudonym by replacing PII data with a cryptographic format-preserving
+      token.
+    is_correct: true
+- model: sim.question
+  pk: 71
+  fields:
+    quiz: 2
+    text: You are migrating an application that tracks library books and information
+      about each book, such as author or year published, from an on-premises data
+      warehouse to BigQuery. In your current relational database, the author information
+      is kept in a separate table and joined to the book information on a common key.
+      Based on Google's recommended practice for schema design, how would you structure
+      the data to ensure optimal speed of queries about the author of each book that
+      has been borrowed?
+- model: sim.answer
+  pk: 283
+  fields:
+    question: 71
+    text: Keep the schema the same, maintain the different tables for the book and
+      each of the attributes, and query as you are doing today.
+    is_correct: false
+- model: sim.answer
+  pk: 284
+  fields:
+    question: 71
+    text: Create a table that is wide and includes a column for each attribute, including
+      the author's first name, last name, date of birth, etc.
+    is_correct: false
+- model: sim.answer
+  pk: 285
+  fields:
+    question: 71
+    text: Create a table that includes information about the books and authors, but
+      nest the author fields inside the author column.
+    is_correct: true
+- model: sim.answer
+  pk: 286
+  fields:
+    question: 71
+    text: Keep the schema the same, create a view that joins all of the tables, and
+      always query the view.
+    is_correct: false
+- model: sim.question
+  pk: 72
+  fields:
+    quiz: 2
+    text: You need to give new website users a globally unique identifier (GUID) using
+      a service that takes in data points and returns a GUID. This data is sourced
+      from both internal and external systems via HTTP calls that you will make via
+      microservices within your pipeline. There will be tens of thousands of messages
+      per second, and that can be multi-threaded. You worry about the backpressure
+      on the system. How should you design your pipeline to minimize that backpressure?
+- model: sim.answer
+  pk: 287
+  fields:
+    question: 72
+    text: Call out to the service via HTTP.
+    is_correct: false
+- model: sim.answer
+  pk: 288
+  fields:
+    question: 72
+    text: Create the pipeline statically in the class definition.
+    is_correct: false
+- model: sim.answer
+  pk: 289
+  fields:
+    question: 72
+    text: Create a new object in the startBundle method of DoFn.
+    is_correct: false
+- model: sim.answer
+  pk: 290
+  fields:
+    question: 72
+    text: Batch the job into ten-second increments.
+    is_correct: true
+- model: sim.question
+  pk: 73
+  fields:
+    quiz: 2
+    text: You are migrating your data warehouse to Google Cloud and decommissioning
+      your on-premises data center. Because this is a priority for your company, you
+      know that bandwidth will be made available for the initial data load to the
+      cloud. The files being transferred are not large in number, but each file is
+      90 GB. Additionally, you want your transactional systems to continually update
+      the warehouse on Google Cloud in real time. What tools should you use to migrate
+      the data and ensure that it continues to write to your warehouse?
+- model: sim.answer
+  pk: 291
+  fields:
+    question: 73
+    text: Storage Transfer Service for the migration; Pub/Sub and Cloud Data Fusion
+      for the real-time updates
+    is_correct: false
+- model: sim.answer
+  pk: 292
+  fields:
+    question: 73
+    text: BigQuery Data Transfer Service for the migration; Pub/Sub and Dataproc for
+      the real-time updates
+    is_correct: false
+- model: sim.answer
+  pk: 293
+  fields:
+    question: 73
+    text: gsutil for the migration; Pub/Sub and Dataflow for the real-time updates
+    is_correct: true
+- model: sim.answer
+  pk: 294
+  fields:
+    question: 73
+    text: gsutil for both the migration and the real-time updates
+    is_correct: false
+- model: sim.question
+  pk: 74
+  fields:
+    quiz: 2
+    text: You are using Bigtable to persist and serve stock market data for each of
+      the major indices. To serve the trading application, you need to access only
+      the most recent stock prices that are streaming in. How should you design your
+      row key and tables to ensure that you can access the data with the simplest
+      query?
+- model: sim.answer
+  pk: 295
+  fields:
+    question: 74
+    text: Create one unique table for all of the indices, and then use the index and
+      timestamp as the row key design.
+    is_correct: true
+- model: sim.answer
+  pk: 296
+  fields:
+    question: 74
+    text: Create one unique table for all of the indices, and then use a reverse timestamp
+      as the row key design.
+    is_correct: false
+- model: sim.answer
+  pk: 297
+  fields:
+    question: 74
+    text: For each index, have a separate table and use a timestamp as the row key
+      design.
+    is_correct: false
+- model: sim.answer
+  pk: 298
+  fields:
+    question: 74
+    text: For each index, have a separate table and use a reverse timestamp as the
+      row key design.
+    is_correct: false
+- model: sim.question
+  pk: 75
+  fields:
+    quiz: 2
+    text: You are building a report-only data warehouse where the data is streamed
+      into BigQuery via the streaming API. Following Google's best practices, you
+      have both a staging and a production table for the data. How should you design
+      your data loading to ensure that there is only one master dataset without affecting
+      performance on either the ingestion or reporting pieces?
+- model: sim.answer
+  pk: 299
+  fields:
+    question: 75
+    text: Have a staging table that is an append-only model, and then update the production
+      table every three hours with the changes written to staging.
+    is_correct: false
+- model: sim.answer
+  pk: 300
+  fields:
+    question: 75
+    text: Have a staging table that is an append-only model, and then update the production
+      table every ninety minutes with the changes written to staging.
+    is_correct: false
+- model: sim.answer
+  pk: 301
+  fields:
+    question: 75
+    text: Have a staging table that moves the staged data over to the production table
+      and deletes the contents of the staging table every three hours.
+    is_correct: true
+- model: sim.answer
+  pk: 302
+  fields:
+    question: 75
+    text: Have a staging table that moves the staged data over to the production table
+      and deletes the contents of the staging table every thirty minutes.
+    is_correct: false
+- model: sim.question
+  pk: 76
+  fields:
+    quiz: 2
+    text: You issue a new batch job to Dataflow. The job starts successfully, processes
+      a few elements, and then suddenly fails and shuts down. You navigate to the
+      Dataflow monitoring interface where you find errors related to a particular
+      DoFn in your pipeline. What is the most likely cause of the errors?
+- model: sim.answer
+  pk: 303
+  fields:
+    question: 76
+    text: Job validation
+    is_correct: false
+- model: sim.answer
+  pk: 304
+  fields:
+    question: 76
+    text: Exceptions in worker code
+    is_correct: true
+- model: sim.answer
+  pk: 305
+  fields:
+    question: 76
+    text: Graph or pipeline construction
+    is_correct: false
+- model: sim.answer
+  pk: 306
+  fields:
+    question: 76
+    text: Insufficient permissions
+    is_correct: false
+- model: sim.question
+  pk: 77
+  fields:
+    quiz: 2
+    text: Your new customer has requested daily reports that show their net consumption
+      of Google Cloud compute resources and who used the resources. You need to quickly
+      and efficiently generate these daily reports. What should you do?
+- model: sim.answer
+  pk: 307
+  fields:
+    question: 77
+    text: Do daily exports of Cloud Logging data to BigQuery. Create views filtering
+      by project, log type, resource, and user.
+    is_correct: true
+- model: sim.answer
+  pk: 308
+  fields:
+    question: 77
+    text: Filter data in Cloud Logging by project, resource, and user; then export
+      the data in CSV format.
+    is_correct: false
+- model: sim.answer
+  pk: 309
+  fields:
+    question: 77
+    text: Filter data in Cloud Logging by project, log type, resource, and user, then
+      import the data into BigQuery.
+    is_correct: false
+- model: sim.answer
+  pk: 310
+  fields:
+    question: 77
+    text: Export Cloud Logging data to Cloud Storage in CSV format. Cleanse the data
+      using Dataprep, filtering by project, resource, and user.
+    is_correct: false
+- model: sim.question
+  pk: 78
+  fields:
+    quiz: 2
+    text: The Development and External teams have the project viewer Identity and
+      Access Management (IAM) role in a folder named Visualization. You want the Development
+      Team to be able to read data from both Cloud Storage and BigQuery, but the External
+      Team should only be able to read data from BigQuery. What should you do?
+- model: sim.answer
+  pk: 311
+  fields:
+    question: 78
+    text: Remove Cloud Storage IAM permissions to the External Team on the acme-raw-data
+      project.
+    is_correct: false
+- model: sim.answer
+  pk: 312
+  fields:
+    question: 78
+    text: Create Virtual Private Cloud (VPC) firewall rules on the acme-raw-data project
+      that deny all ingress traffic from the External Team CIDR range.
+    is_correct: false
+- model: sim.answer
+  pk: 313
+  fields:
+    question: 78
+    text: Create a VPC Service Controls perimeter containing both projects and BigQuery
+      as a restricted API. Add the External Team users to the perimeter's Access Level.
+    is_correct: false
+- model: sim.answer
+  pk: 314
+  fields:
+    question: 78
+    text: Create a VPC Service Controls perimeter containing both projects and Cloud
+      Storage as a restricted API. Add the Development Team users to the perimeter's
+      Access Level.
+    is_correct: true
+- model: sim.question
+  pk: 79
+  fields:
+    quiz: 2
+    text: Your startup has a web application that currently serves customers out of
+      a single region in Asia. You are targeting funding that will allow your startup
+      to serve customers globally. Your current goal is to optimize for cost, and
+      your post-funding goal is to optimize for global presence and performance. You
+      must use a native JDBC driver. What should you do?
+- model: sim.answer
+  pk: 315
+  fields:
+    question: 79
+    text: Use Cloud Spanner to configure a single region instance initially, and then
+      configure multi-region Cloud Spanner instances after securing funding.
+    is_correct: true
+- model: sim.answer
+  pk: 316
+  fields:
+    question: 79
+    text: Use a Cloud SQL for PostgreSQL highly available instance first, and Bigtable
+      with US, Europe, and Asia replication after securing funding.
+    is_correct: false
+- model: sim.answer
+  pk: 317
+  fields:
+    question: 79
+    text: Use a Cloud SQL for PostgreSQL zonal instance first, and Bigtable with US,
+      Europe, and Asia after securing funding.
+    is_correct: false
+- model: sim.answer
+  pk: 318
+  fields:
+    question: 79
+    text: Use a Cloud SQL for PostgreSQL zonal instance first, and Cloud SQL for PostgreSQL
+      with highly available configuration after securing funding.
+    is_correct: false
+- model: sim.question
+  pk: 80
+  fields:
+    quiz: 2
+    text: You need to migrate 1 PB of data from an on-premises data center to Google
+      Cloud. Data transfer time during the migration should take only a few hours.
+      You want to follow Google-recommended practices to facilitate the large data
+      transfer over a secure connection. What should you do?
+- model: sim.answer
+  pk: 319
+  fields:
+    question: 80
+    text: Establish a Cloud Interconnect connection between the on-premises data center
+      and Google Cloud, and then use the Storage Transfer Service.
+    is_correct: true
+- model: sim.answer
+  pk: 320
+  fields:
+    question: 80
+    text: Use a Transfer Appliance and have engineers manually encrypt, decrypt, and
+      verify the data.
+    is_correct: false
+- model: sim.answer
+  pk: 321
+  fields:
+    question: 80
+    text: Establish a Cloud VPN connection, start gcloud compute scp jobs in parallel,
+      and run checksums to verify the data.
+    is_correct: false
+- model: sim.answer
+  pk: 322
+  fields:
+    question: 80
+    text: Reduce the data into 3 TB batches, transfer the data using gsutil, and run
+      checksums to verify the data.
+    is_correct: false
+- model: sim.question
+  pk: 81
+  fields:
+    quiz: 2
+    text: You are loading CSV files from Cloud Storage to BigQuery. The files have
+      known data quality issues, including mismatched data types, such as STRINGs
+      and INT64s in the same column, and inconsistent formatting of values such as
+      phone numbers or addresses. You need to create the data pipeline to maintain
+      data quality and perform the required cleansing and transformation. What should
+      you do?
+- model: sim.answer
+  pk: 323
+  fields:
+    question: 81
+    text: Use Data Fusion to transform the data before loading it into BigQuery.
+    is_correct: true
+- model: sim.answer
+  pk: 324
+  fields:
+    question: 81
+    text: Use Data Fusion to convert the CSV files to a self-describing data format,
+      such as AVRO, before loading the data to BigQuery.
+    is_correct: false
+- model: sim.answer
+  pk: 325
+  fields:
+    question: 81
+    text: Load the CSV files into a staging table with the desired schema, perform
+      the transformations with SQL, and then write the results to the final destination
+      table.
+    is_correct: false
+- model: sim.answer
+  pk: 326
+  fields:
+    question: 81
+    text: Create a table with the desired schema, load the CSV files into the table,
+      and perform the transformations in place using SQL.
+    is_correct: false
+- model: sim.question
+  pk: 82
+  fields:
+    quiz: 2
+    text: You are developing a new deep learning model that predicts a customer's
+      likelihood to buy on your ecommerce site. After running an evaluation of the
+      model against both the original training data and new test data, you find that
+      your model is overfitting the data. You want to improve the accuracy of the
+      model when predicting new data. What should you do?
+- model: sim.answer
+  pk: 327
+  fields:
+    question: 82
+    text: Increase the size of the training dataset, and increase the number of input
+      features.
+    is_correct: false
+- model: sim.answer
+  pk: 328
+  fields:
+    question: 82
+    text: Increase the size of the training dataset, and decrease the number of input
+      features.
+    is_correct: true
+- model: sim.answer
+  pk: 329
+  fields:
+    question: 82
+    text: Reduce the size of the training dataset, and increase the number of input
+      features.
+    is_correct: false
+- model: sim.answer
+  pk: 330
+  fields:
+    question: 82
+    text: Reduce the size of the training dataset, and decrease the number of input
+      features.
+    is_correct: false
+- model: sim.question
+  pk: 83
+  fields:
+    quiz: 2
+    text: You are implementing a chatbot to help an online retailer streamline their
+      customer service. The chatbot must be able to respond to both text and voice
+      inquiries. You are looking for a low-code or no-code option, and you want to
+      be able to easily train the chatbot to provide ANSWERs to keywords. What should
+      you do?
+- model: sim.answer
+  pk: 331
+  fields:
+    question: 83
+    text: Use the Cloud Speech-to-Text API to build a Python application in App Engine.
+    is_correct: false
+- model: sim.answer
+  pk: 332
+  fields:
+    question: 83
+    text: Use the Cloud Speech-to-Text API to build a Python application in a Compute
+      Engine instance.
+    is_correct: false
+- model: sim.answer
+  pk: 333
+  fields:
+    question: 83
+    text: Use Dialogflow for simple queries and the Cloud Speech-to-Text API for complex
+      queries.
+    is_correct: false
+- model: sim.answer
+  pk: 334
+  fields:
+    question: 83
+    text: Use Dialogflow to implement the chatbot, defining the intents based on the
+      most common queries collected.
+    is_correct: true
+- model: sim.question
+  pk: 84
+  fields:
+    quiz: 2
+    text: An aerospace company uses a proprietary data format to store its flight
+      data. You need to connect this new data source to BigQuery and stream the data
+      into BigQuery. You want to efficiently import the data into BigQuery while consuming
+      as few resources as possible. What should you do?
+- model: sim.answer
+  pk: 335
+  fields:
+    question: 84
+    text: Write a shell script that triggers a Cloud Function that performs periodic
+      ETL batch jobs on the new data source.
+    is_correct: false
+- model: sim.answer
+  pk: 336
+  fields:
+    question: 84
+    text: Use a standard Dataflow pipeline to store the raw data in BigQuery, and
+      then transform the format later when the data is used.
+    is_correct: false
+- model: sim.answer
+  pk: 337
+  fields:
+    question: 84
+    text: Use Apache Hive to write a Dataproc job that streams the data into BigQuery
+      in CSV format.
+    is_correct: false
+- model: sim.answer
+  pk: 338
+  fields:
+    question: 84
+    text: Use an Apache Beam custom connector to write a Dataflow pipeline that streams
+      the data into BigQuery in Avro format.
+    is_correct: true
+- model: sim.question
+  pk: 85
+  fields:
+    quiz: 2
+    text: An online brokerage company requires a high volume trade processing architecture.
+      You need to create a secure queuing system that triggers jobs. The jobs will
+      run in Google Cloud and call the company's Python API to execute trades. You
+      need to efficiently implement a solution. What should you do?
+- model: sim.answer
+  pk: 339
+  fields:
+    question: 85
+    text: Use a Pub/Sub push subscription to trigger a Cloud Function to pass the
+      data to the Python API.
+    is_correct: true
+- model: sim.answer
+  pk: 340
+  fields:
+    question: 85
+    text: Write an application hosted on a Compute Engine instance that makes a push
+      subscription to the Pub/Sub topic.
+    is_correct: false
+- model: sim.answer
+  pk: 341
+  fields:
+    question: 85
+    text: Write an application that makes a queue in a NoSQL database.
+    is_correct: false
+- model: sim.answer
+  pk: 342
+  fields:
+    question: 85
+    text: Use Cloud Composer to subscribe to a Pub/Sub topic and call the Python API.
+    is_correct: false
+- model: sim.question
+  pk: 86
+  fields:
+    quiz: 2
+    text: Your company wants to be able to retrieve large result sets of medical information from your current system, which has over 10 TBs in the database, and store the data in new tables for further query. The database must have a low-maintenance architecture and be accessible via SQL. You need to implement a cost-effective solution that can support data analytics for large result sets. What should you do? 
+- model: sim.answer
+  pk: 343
+  fields:
+    question: 86
+    text: Use Cloud SQL, but first organize the data into tables. Use JOIN in queries
+      to retrieve data.
+    is_correct: false
+- model: sim.answer
+  pk: 344
+  fields:
+    question: 86
+    text: Use BigQuery as a data warehouse. Set output destinations for caching large
+      queries.
+    is_correct: true
+- model: sim.answer
+  pk: 345
+  fields:
+    question: 86
+    text: Use a MySQL cluster installed on a Compute Engine managed instance group
+      for scalability.
+    is_correct: false
+- model: sim.answer
+  pk: 346
+  fields:
+    question: 86
+    text: Use Cloud Spanner to replicate the data across regions. Normalize the data
+      in a series of tables.
+    is_correct: false
+- model: sim.question
+  pk: 87
+  fields:
+    quiz: 2
+    text: You have 15 TB of data in your on-premises data center that you want to transfer to Google Cloud. Your data changes weekly and is stored in a POSIX-compliant source. The network operations team has granted you 500Mbps bandwidth to the public internet. You want to follow Google-recommended practices to reliably transfer yourdata to Google Cloud on a weekly basis. What should you do?  
+- model: sim.answer
+  pk: 347
+  fields:
+    question: 87
+    text: Use Cloud Scheduler to trigger the gsutil command. Use the -m parameter for optimal parallelism.
+    is_correct: false
+- model: sim.answer
+  pk: 348
+  fields:
+    question: 87
+    text: Use Transfer Appliance to migrate your data into a Google Kubernetes Engine
+      cluster, and then configure a weekly transfer job. 
+    is_correct: false
+- model: sim.answer
+  pk: 349
+  fields:
+    question: 87
+    text: Install Storage Transfer Service for on-premises data in your data center,
+      and then configure a weekly transfer job.
+    is_correct: true
+- model: sim.answer
+  pk: 350
+  fields:
+    question: 87
+    text: Install Storage Transfer Service for on-premises data on a Google Cloud
+      virtual machine, and then configure a weekly transfer job. 
+    is_correct: false
+- model: sim.question
+  pk: 88
+  fields:
+    quiz: 2
+    text: You are designing a system that requires an ACID-compliant database. You must ensure that the system requires minimal human intervention in case of a failure. What should you do?
+- model: sim.answer
+  pk: 351
+  fields:
+    question: 88
+    text: Configure a Cloud SQL for MySQL instance with point-in-time recovery enabled.
+    is_correct: false
+- model: sim.answer
+  pk: 352
+  fields:
+    question: 88
+    text: Configure a Cloud SQL for PostgreSQL instance with high availability enabled.
+    is_correct: true
+- model: sim.answer
+  pk: 353
+  fields:
+    question: 88
+    text: Configure a Bigtable instance with more than one cluster.
+    is_correct: false
+- model: sim.answer
+  pk: 354
+  fields:
+    question: 88
+    text: Configure a BigQuery table with a multi-region configuration.
+    is_correct: false
+- model: sim.question
+  pk: 89
+  fields:
+    quiz: 2
+    text: You are implementing workflow pipeline scheduling using open source-based tools and Google Kubernetes Engine (GKE). You want to use a Google managed service to simplify and automate the task. You also want to accommodate Shared VPC networking considerations. What should you do? 
+- model: sim.answer
+  pk: 355
+  fields:
+    question: 89
+    text: Use Dataflow for your workflow pipelines. Use Cloud Run triggers for scheduling.
+    is_correct: false
+- model: sim.answer
+  pk: 356
+  fields:
+    question: 89
+    text: Use Dataflow for your workflow pipelines. Use shell scripts to schedule
+      workflows.
+    is_correct: false
+- model: sim.answer
+  pk: 357
+  fields:
+    question: 89
+    text: Use Cloud Composer in a Shared VPC configuration. Place the Cloud Composer
+      resources in the host project.
+    is_correct: false
+- model: sim.answer
+  pk: 358
+  fields:
+    question: 89
+    text: Use Cloud Composer in a Shared VPC configuration. Place the Cloud Composer
+      resources in the service
+    is_correct: true
+- model: sim.question
+  pk: 90
+  fields:
+    quiz: 2
+    text: You are using BigQuery and Data Studio to design a customer-facing dashboard that displays large quantities of aggregated data. You expect a high volume of concurrent users. You need to optimize the dashboard to provide quick visualizations with minimal latency. What should you do? 
+- model: sim.answer
+  pk: 359
+  fields:
+    question: 90
+    text: Use BigQuery BI Engine with materialized views.
+    is_correct: true
+- model: sim.answer
+  pk: 360
+  fields:
+    question: 90
+    text: Use BigQuery BI Engine with logical views.
+    is_correct: false
+- model: sim.answer
+  pk: 361
+  fields:
+    question: 90
+    text: Use BigQuery BI Engine with streaming data.
+    is_correct: false
+- model: sim.answer
+  pk: 362
+  fields:
+    question: 90
+    text: Use BigQuery BI Engine with authorized views.
+    is_correct: false
+- model: sim.question
+  pk: 91
+  fields:
+    quiz: 2
+    text: Government regulations in the banking industry mandate the protection of clients' personally identifiable information (PII). Your company requires PII to be access controlled, encrypted, and compliant with major data protection standards. In addition to using Cloud Data Loss Prevention (Cloud DLP), you want to follow Google-recommended practices and use service accounts to control access to PII. What should you do?
+- model: sim.answer
+  pk: 363
+  fields:
+    question: 91
+    text: Assign the required Identity and Access Management (IAM) roles to every
+      employee, and create a single service account to access project resources.
+    is_correct: false
+- model: sim.answer
+  pk: 364
+  fields:
+    question: 91
+    text: Use one service account to access a Cloud SQL database, and use separate
+      service accounts for each human user.
+    is_correct: false
+- model: sim.answer
+  pk: 365
+  fields:
+    question: 91
+    text: Use Cloud Storage to comply with major data protection standards. Use one
+      service account shared by all user.
+    is_correct: false
+- model: sim.answer
+  pk: 366
+  fields:
+    question: 91
+    text: Use Cloud Storage to comply with major data protection standards. Use multiple
+      service accounts attached to IAM groups to grant the appropriate access to each group.
+    is_correct: true
+- model: sim.question
+  pk: 92
+  fields:
+    quiz: 2
+    text: You need to migrate a Redis database from an on-premises data center to a Memorystore for Redis instance. You want to follow Google-recommended practices and perform the migration for minimal cost, time, and effort. What should you do? 
+- model: sim.answer
+  pk: 367
+  fields:
+    question: 92
+    text: Make an RDB backup of the Redis database, use the gsutil utility to copy the RDB file into a Cloud Storage bucket, and then import the RDB file into the Memorystore for Redis instance.
+    is_correct: true
+- model: sim.answer
+  pk: 368
+  fields:
+    question: 92
+    text: Make a secondary instance of the Redis database on a Compute Engine instance
+      and then perform a live cutover.
+    is_correct: false
+- model: sim.answer
+  pk: 369
+  fields:
+    question: 92
+    text: Create a Dataflow job to read the Redis database from the on-premises data
+      center and write the data to a Memorystore for Redis instance.
+    is_correct: false
+- model: sim.answer
+  pk: 370
+  fields:
+    question: 92
+    text: Write a shell script to migrate the Redis data and create a new Memorystore
+      for Redis instance.
+    is_correct: false
+- model: sim.question
+  pk: 93
+  fields:
+    quiz: 2
+    text: Your platform on your on-premises environment generates 100 GB of data daily, composed of millions of structured JSON text files. Your on-premises environment cannot be accessed from the public internet. You want to use Google Cloud products to query and explore the platform data. What should you do?
+- model: sim.answer
+  pk: 371
+  fields:
+    question: 93
+    text: Use Cloud Scheduler to copy data daily from your on-premises environment to Cloud Storage. Use the BigQuery Data Transfer Service to import data into BigQuery.
+    is_correct: false
+- model: sim.answer
+  pk: 372
+  fields:
+    question: 93
+    text: Use a Transfer Appliance to copy data from your on-premises environment to Cloud Storage. Use the BigQuery Data Transfer Service to import data into BigQuery. 
+    is_correct: false
+- model: sim.answer
+  pk: 373
+  fields:
+    question: 93
+    text: Use Transfer Service for on-premises data to copy data from your on-premises environment to Cloud Storage. Use the BigQuery Data Transfer Service to import data into BigQuery.
+    is_correct: true
+- model: sim.answer
+  pk: 374
+  fields:
+    question: 93
+    text: Use the BigQuery Data Transfer Service dataset copy to transfer all data
+      into BigQuery.
+    is_correct: false
+- model: sim.question
+  pk: 94
+  fields:
+    quiz: 2
+    text: A TensorFlow machine learning model on Compute Engine virtual machines (n2-standard-32) takes two days to reduce the training time in a cost-effective manner. What should you do?
+- model: sim.answer
+  pk: 375
+  fields:
+    question: 94
+    text: Change the VM type to n2-highmem-32.
+    is_correct: false
+- model: sim.answer
+  pk: 376
+  fields:
+    question: 94
+    text: Change the VM type to e2-standard-32.
+    is_correct: false
+- model: sim.answer
+  pk: 377
+  fields:
+    question: 94
+    text: Train the model using a VM with a GPU hardware accelerator.
+    is_correct: true
+- model: sim.answer
+  pk: 378
+  fields:
+    question: 94
+    text: Train the model using a VM with a TPU hardware accelerator.
+    is_correct: false
+- model: sim.question
+  pk: 95
+  fields:
+    quiz: 2
+    text: You want to create a machine learning model using BigQuery ML and create an endpoint for hosting the model using Vertex AI. This will enable the processing of continuous streaming data in near-real time from multiple vendors. The data may contain invalid values. What should you do?
+- model: sim.answer
+  pk: 379
+  fields:
+    question: 95
+    text: Create a new BigQuery dataset and use streaming inserts to land the data from multiple vendors. Configure your BigQuery ML model to use the "ingestion" dataset as the framing data. 
+    is_correct: false
+- model: sim.answer
+  pk: 380
+  fields:
+    question: 95
+    text: Use BigQuery streaming inserts to land the data from multiple vendors where your BigQuery dataset ML model is deployed.
+    is_correct: false
+- model: sim.answer
+  pk: 381
+  fields:
+    question: 95
+    text: Create a Pub/Sub topic and send all vendor data to it. Connect a Cloud Function to the topic to process the data and store it in BigQuery. 
+    is_correct: false
+- model: sim.answer
+  pk: 382
+  fields:
+    question: 95
+    text: Create a Pub/Sub topic and send all vendor data to it. Use Dataflow to process and sanitize the Pub/Sub data and stream it to BigQuery.
+    is_correct: true
+
+- model: sim.question
+  pk: 96
+  fields:
+    quiz: 2
+    text: You have a data processing application that runs on Google Kubernetes Engine (GKE). Containers need to be launched with their latest available configurations from a container registry. Your GKE nodes need to have GPUs, local SSDs, and 8 Gbps bandwidth. You want to efficiently provision the data processing infrastructure and manage the deployment process. What should you do?
+- model: sim.answer
+  pk: 383
+  fields:
+    question: 96
+    text: Use Compute Engine startup scripts to pull container images, and use gcloud commands to provision the infrastructure.
+    is_correct: false
+- model: sim.answer
+  pk: 384
+  fields:
+    question: 96
+    text: Use Cloud Build to schedule a job using Terraform build to provision the infrastructure and launch with the most current container images.
+    is_correct: true
+- model: sim.answer
+  pk: 385
+  fields:
+    question: 96
+    text: Use GKE to autoscale containers, and use gcloud commands to provision the infrastructure.
+    is_correct: false
+- model: sim.answer
+  pk: 386
+  fields:
+    question: 96
+    text: Use Dataflow to provision the data pipeline, and use Cloud Scheduler to run the job.
+    is_correct: false
+
+- model: sim.question
+  pk: 97
+  fields:
+    quiz: 2
+    text: You need ads data to serve AI models and historical data for analytics. Longtail and outlier data points need to be identified. You want to cleanse the data in near-real time before running it through AI models. What should you do?
+- model: sim.answer
+  pk: 387
+  fields:
+    question: 97
+    text: Use Cloud Storage as a data warehouse, shell scripts for processing, and BigQuery to create views for desired datasets.
+    is_correct: false
+- model: sim.answer
+  pk: 388
+  fields:
+    question: 97
+    text: Use Dataflow to identify longtail and outlier data points programmatically, with BigQuery as a sink.
+    is_correct: true
+- model: sim.answer
+  pk: 389
+  fields:
+    question: 97
+    text: Use BigQuery to ingest, prepare, and then analyze the data, and then run queries to create views.
+    is_correct: false
+- model: sim.answer
+  pk: 390
+  fields:
+    question: 97
+    text: Use Cloud Composer to identify longtail and outlier data points, and then output a usable dataset to BigQuery.
+    is_correct: false
+
+- model: sim.question
+  pk: 98
+  fields:
+    quiz: 2
+    text: You are collecting IoT sensor data from millions of devices across the world and storing the data in BigQuery. Your access pattern is based on recent data, filtered by location_id and device_version with the following query-> SELECT MAX ( temperature) FROM acme_iot_data.sensors WHERE create_date > DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY) AND location_id = "SWIW9TQ" AND device_version = "20200713" You want to optimize your queries for cost and performance. How should you structure your data?
+- model: sim.answer
+  pk: 391
+  fields:
+    question: 98
+    text: Partition table data by create_date, location_id, and device_version.
+    is_correct: false
+- model: sim.answer
+  pk: 392
+  fields:
+    question: 98
+    text: Partition table data by create_date, cluster table data by location_id, and device_version.
+    is_correct: true
+- model: sim.answer
+  pk: 393
+  fields:
+    question: 98
+    text: Cluster table data by create_date, location_id, and device_version.
+    is_correct: false
+- model: sim.answer
+  pk: 394
+  fields:
+    question: 98
+    text: Cluster table data by create_date, partition by location_id, and device_version.
+    is_correct: false
+
+- model: sim.question
+  pk: 99
+  fields:
+    quiz: 2
+    text: A live TV show asks viewers to cast votes using their mobile phones. The event generates a large volume of data during a 3-minute period. You are in charge of the "Voting infrastructure" and must ensure that the platform can handle the load and that all votes are processed. You must display partial results while voting is open. After voting closes, you need to count the votes exactly once while optimizing cost. What should you do?
+- model: sim.answer
+  pk: 395
+  fields:
+    question: 99
+    text: Create a Memorystore instance with a high availability (HA) configuration.
+    is_correct: false
+- model: sim.answer
+  pk: 396
+  fields:
+    question: 99
+    text: Create a Cloud SQL for PostgreSQL database with high availability (HA) configuration and multiple read replicas.
+    is_correct: false
+- model: sim.answer
+  pk: 397
+  fields:
+    question: 99
+    text: Write votes to a Pub/Sub topic and have Cloud Functions subscribe to it and write votes to BigQuery.
+    is_correct: false
+- model: sim.answer
+  pk: 398
+  fields:
+    question: 99
+    text: Write votes to a Pub/Sub topic and load into both Bigtable and BigQuery via a Dataflow pipeline. Query Bigtable for real-time results and BigQuery for later analysis. Shut down the Bigtable instance when voting concludes.
+    is_correct: true
+
+- model: sim.question
+  pk: 100
+  fields:
+    quiz: 2
+    text: A shipping company has live package-tracking data that is sent to an Apache Kafka stream in real time. This is then loaded into BigQuery. Analysts in your company want to query the tracking data in BigQuery to analyze geospatial trends in the lifecycle of a package. The table was originally created with ingest-date partitioning. Over time, the query processing time has increased. You need to copy all the data to a new clustered table. What should you do?
+- model: sim.answer
+  pk: 399
+  fields:
+    question: 100
+    text: Re-create the table using data partitioning on the package delivery date.
+    is_correct: false
+- model: sim.answer
+  pk: 400
+  fields:
+    question: 100
+    text: Implement clustering in BigQuery on the package-tracking ID column.
+    is_correct: true
+- model: sim.answer
+  pk: 401
+  fields:
+    question: 100
+    text: Implement clustering in BigQuery on the ingest date column.
+    is_correct: false
+- model: sim.answer
+  pk: 402
+  fields:
+    question: 100
+    text: Tier older data onto Cloud Storage files and create a BigQuery table using Cloud Storage as an external data source.
+    is_correct: false
+
+- model: sim.question
+  pk: 101
+  fields:
+    quiz: 2
+    text: You are designing a data mesh on Google Cloud with multiple distinct data engineering teams building data products. The typical data curation design pattern consists of landing files in Cloud Storage, transforming raw data in Cloud Storage and BigQuery datasets, and storing the final curated data product in BigQuery datasets. You need to configure Dataplex to ensure that each team can access only the assets needed to build their data products. You also need to ensure that teams can easily share the curated data product. What should you do?
+- model: sim.answer
+  pk: 403
+  fields:
+    question: 101
+    text: Create a single Dataplex virtual lake and create a single zone to contain landing, raw, and curated data. Provide each data engineering team access to the virtual lake.
+    is_correct: false
+- model: sim.answer
+  pk: 404
+  fields:
+    question: 101
+    text: Create a single Dataplex virtual lake and create a single zone to contain landing, raw, and curated data. Build separate assets for each data product within the zone. Assign permissions to the data engineering teams at the zone level.
+    is_correct: false
+- model: sim.answer
+  pk: 405
+  fields:
+    question: 101
+    text: Create a Dataplex virtual lake for each data product, and create a single zone to contain landing, raw, and curated data. Provide the data engineering teams with full access to the virtual lake assigned to their data product.
+    is_correct: false
+- model: sim.answer
+  pk: 406
+  fields:
+    question: 101
+    text: Create a Dataplex virtual lake for each data product, and create multiple zones for landing, raw, and curated data. Provide the data engineering teams with full access to the virtual lake assigned to their data product.
+    is_correct: true
+
+- model: sim.question
+  pk: 102
+  fields:
+    quiz: 2
+    text: You are using BigQuery with a multi-region dataset that includes a table with the daily sales volumes. This table is updated multiple times per day. You need to protect your sales table in case of regional failures with a recovery point objective (RPO) of less than 24 hours, while keeping costs to a minimum. What should you do?
+- model: sim.answer
+  pk: 407
+  fields:
+    question: 102
+    text: Schedule a daily export of the table to a Cloud Storage dual or multi-region bucket.
+    is_correct: false
+- model: sim.answer
+  pk: 408
+  fields:
+    question: 102
+    text: Schedule a daily copy of the dataset to a backup region.
+    is_correct: false
+- model: sim.answer
+  pk: 409
+  fields:
+    question: 102
+    text: Schedule a daily BigQuery snapshot of the table.
+    is_correct: true
+- model: sim.answer
+  pk: 410
+  fields:
+    question: 102
+    text: Modify ETL job to load the data into both the current and another backup region.
+    is_correct: false

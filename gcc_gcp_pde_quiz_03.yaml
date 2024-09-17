@@ -1,0 +1,1804 @@
+- model: sim.quiz
+  pk: 3
+  fields:
+    name: GCC PDE Quiz 03
+
+- model: sim.question
+  pk: 103
+  fields:
+    quiz: 3
+    text: You are troubleshooting your Dataflow pipeline that processes data from Cloud Storage to BigQuery. You have discovered that the Dataflow worker nodes cannot communicate with one another. Your networking team relies on Google Cloud network tags to define firewall rules. You need to identify the issue while following Google-recommended networking security practices. What should you do?
+- model: sim.answer
+  pk: 411
+  fields:
+    question: 103
+    text: Determine whether your Dataflow pipeline has a custom network tag set.
+    is_correct: false
+- model: sim.answer
+  pk: 412
+  fields:
+    question: 103
+    text: Determine whether there is a firewall rule set to allow traffic on TCP ports 12345 and 12346 for the Dataflow network tag.
+    is_correct: true
+- model: sim.answer
+  pk: 413
+  fields:
+    question: 103
+    text: Determine whether there is a firewall rule set to allow traffic on TCP ports 12345 and 12346 on the subnet used by Dataflow workers.
+    is_correct: false
+- model: sim.answer
+  pk: 414
+  fields:
+    question: 103
+    text: Determine whether your Dataflow pipeline is deployed with the external IP address option enabled.
+    is_correct: false
+
+- model: sim.question
+  pk: 104
+  fields:
+    quiz: 3
+    text: Your company's customer_order table in BigQuery stores the order history for 10 million customers, with a table size of 10 PB. You need to create a dashboard for the support team to view the order history. The dashboard has two filters, country_name and username. Both are string data types in the BigQuery table. When a filter is applied, the dashboard fetches the order history from the table and displays the query results. However, the dashboard is slow to show the results when applying the filters to the following query-> SELECT date, order, status FROM customer_order WHERE country = '<country_name>' AND username = '<username>' How should you redesign the BigQuery table to support faster access?
+- model: sim.answer
+  pk: 415
+  fields:
+    question: 104
+    text: Cluster the table by country and username fields.
+    is_correct: true
+- model: sim.answer
+  pk: 416
+  fields:
+    question: 104
+    text: Cluster the table by country field, and partition by username field.
+    is_correct: false
+- model: sim.answer
+  pk: 417
+  fields:
+    question: 104
+    text: Partition the table by country and username fields.
+    is_correct: false
+- model: sim.answer
+  pk: 418
+  fields:
+    question: 104
+    text: Partition the table by _PARTITIONTIME.
+    is_correct: false
+
+- model: sim.question
+  pk: 105
+  fields:
+    quiz: 3
+    text: You have a Standard Tier Memorystore for Redis instance deployed in a production environment. You need to simulate a Redis instance failover in the most accurate disaster recovery situation, and ensure that the failover has no impact on production data. What should you do?
+- model: sim.answer
+  pk: 419
+  fields:
+    question: 105
+    text: Create a Standard Tier Memorystore for Redis instance in the development environment. Initiate a manual failover by using the limited-data-loss data protection mode.
+    is_correct: false
+- model: sim.answer
+  pk: 420
+  fields:
+    question: 105
+    text: Create a Standard Tier Memorystore for Redis instance in a development environment. Initiate a manual failover by using the force-data-loss data protection mode.
+    is_correct: false
+- model: sim.answer
+  pk: 421
+  fields:
+    question: 105
+    text: Increase one replica to Redis instance in production environment. Initiate a manual failover by using the force-data-loss data protection mode.
+    is_correct: true
+- model: sim.answer
+  pk: 422
+  fields:
+    question: 105
+    text: Initiate a manual failover by using the limited-data-loss data protection mode to the Memorystore for Redis instance in the production environment.
+    is_correct: false
+
+- model: sim.question
+  pk: 106
+  fields:
+    quiz: 3
+    text: You are administering a BigQuery dataset that uses a customer-managed encryption key (CMEK). You need to share the dataset with a partner organization that does not have access to your CMEK. What should you do?
+- model: sim.answer
+  pk: 423
+  fields:
+    question: 106
+    text: Provide the partner organization a copy of your CMEKs to decrypt the data.
+    is_correct: false
+- model: sim.answer
+  pk: 424
+  fields:
+    question: 106
+    text: Export the tables to parquet files to a Cloud Storage bucket and grant the storageinsights.viewer role on the bucket to the partner organization.
+    is_correct: false
+- model: sim.answer
+  pk: 425
+  fields:
+    question: 106
+    text: Copy the tables you need to share to a dataset without CMEKs. Create an Analytics Hub listing for this dataset.
+    is_correct: true
+- model: sim.answer
+  pk: 426
+  fields:
+    question: 106
+    text: Create an authorized view that contains the CMEK to decrypt the data when accessed.
+    is_correct: false
+
+- model: sim.question
+  pk: 107
+  fields:
+    quiz: 3
+    text: You are developing an Apache Beam pipeline to extract data from a Cloud SQL instance by using JdbclO. You have two projects running in Google Cloud. The pipeline will be deployed and executed on Dataflow in Project A. The Cloud SQL instance is running in Project B and does not have a public IP address. After deploying the pipeline, you noticed that the pipeline failed to extract data from the Cloud SQL instance due to connection failure. You verified that VPC Service Controls and shared VPC are not in use in these projects. You want to resolve this error while ensuring that the data does not go through the public internet. What should you do?
+- model: sim.answer
+  pk: 427
+  fields:
+    question: 107
+    text: Set up VPC Network Peering between Project A and Project B. Add a firewall rule to allow the peered subnet range to access all instances on the network.
+    is_correct: true
+- model: sim.answer
+  pk: 428
+  fields:
+    question: 107
+    text: Turn off the external IP addresses on the Dataflow worker. Enable Cloud NAT in Project A.
+    is_correct: false
+- model: sim.answer
+  pk: 429
+  fields:
+    question: 107
+    text: Add the external IP addresses of the Dataflow worker as authorized networks in the Cloud SQL instance.
+    is_correct: false
+- model: sim.answer
+  pk: 430
+  fields:
+    question: 107
+    text: Set up VPC Network Peering between Project A and Project B. Create a Compute Engine instance without external IP address in Project B on the peered subnet to serve as a proxy server to the Cloud SQL database.
+    is_correct: false
+
+- model: sim.question
+  pk: 109
+  fields:
+    quiz: 3
+    text: You have a Cloud SQL for PostgreSQL instance in Region1 with one read replica in Region2 and another read replica in Region3. An unexpected event in Region1 requires that you perform disaster recovery by promoting a read replica in Region2. You need to ensure that your application has the same database capacity available before you switch over the connections. What should you do?
+- model: sim.answer
+  pk: 436
+  fields:
+    question: 109
+    text: Enable zonal high availability on the primary instance. Create a new read replica in a new region.
+    is_correct: false
+- model: sim.answer
+  pk: 437
+  fields:
+    question: 109
+    text: Create a cascading read replica from the existing read replica in Region3.
+    is_correct: false
+- model: sim.answer
+  pk: 438
+  fields:
+    question: 109
+    text: Create two new read replicas from the new primary instance, one in Region3 and one in a new region.
+    is_correct: true
+- model: sim.answer
+  pk: 439
+  fields:
+    question: 109
+    text: Create a new read replica in Region1, promote the new read replica to be the primary instance, and enable zonal high availability.
+    is_correct: false
+
+- model: sim.question
+  pk: 110
+  fields:
+    quiz: 3
+    text: You orchestrate ETL pipelines by using Cloud Composer. One of the tasks in the Apache Airflow directed acyclic graph (DAG) relies on a third-party service. You want to be notified when the task does not succeed. What should you do?
+- model: sim.answer
+  pk: 440
+  fields:
+    question: 110
+    text: Assign a function with notification logic to the on_retry_callback parameter for the operator responsible for the task at risk.
+    is_correct: false
+- model: sim.answer
+  pk: 441
+  fields:
+    question: 110
+    text: Configure a Cloud Monitoring alert on the sla_missed metric associated with the task at risk to trigger a notification.
+    is_correct: false
+- model: sim.answer
+  pk: 442
+  fields:
+    question: 110
+    text: Assign a function with notification logic to the on_failure_callback parameter for the operator responsible for the task at risk.
+    is_correct: true
+- model: sim.answer
+  pk: 443
+  fields:
+    question: 110
+    text: Assign a function with notification logic to the sla_miss_callback parameter for the operator responsible for the task at risk.
+    is_correct: false
+
+- model: sim.question
+  pk: 111
+  fields:
+    quiz: 3
+    text: You are migrating your on-premises data warehouse to BigQuery. One of the upstream data sources resides on a MySQL database that runs in your on-premises data center with no public IP addresses. You want to ensure that the data ingestion into BigQuery is done securely and does not go through the public internet. What should you do?
+- model: sim.answer
+  pk: 444
+  fields:
+    question: 111
+    text: Update your existing on-premises ETL tool to write to BigQuery by using the BigQuery Open Database Connectivity (ODBC) driver. Set up the proxy parameter in the simba.googlebigqueryodbc.ini file to point to your data center's NAT gateway.
+    is_correct: false
+- model: sim.answer
+  pk: 445
+  fields:
+    question: 111
+    text: Use Datastream to replicate data from your on-premises MySQL database to BigQuery. Set up Cloud Interconnect between your on-premises data center and Google Cloud. Use Private connectivity as the connectivity method and allocate an IP address range within your VPC network to the Datastream connectivity configuration. Use Server-only as the encryption type when setting up the connection profile in Datastream.
+    is_correct: true
+- model: sim.answer
+  pk: 446
+  fields:
+    question: 111
+    text: Use Datastream to replicate data from your on-premises MySQL database to BigQuery. Use Forward-SSH tunnel as the connectivity method to establish a secure tunnel between Datastream and your on-premises MySQL database through a tunnel server in your on-premises data center. Use None as the encryption type when setting up the connection profile in Datastream.
+    is_correct: false
+- model: sim.answer
+  pk: 447
+  fields:
+    question: 111
+    text: Use Datastream to replicate data from your on-premises MySQL database to BigQuery. Gather Datastream public IP addresses of the Google Cloud region that will be used to set up the stream. Add those IP addresses to the firewall allowlist of your on-premises data center. Use IP Allowlisting as the connectivity method and Server-only as the encryption type when setting up the connection profile in Datastream.
+    is_correct: false
+
+- model: sim.question
+  pk: 112
+  fields:
+    quiz: 3
+    text: You store and analyze your relational data in BigQuery on Google Cloud with all data that resides in US regions. You also have a variety of object stores across Microsoft Azure and Amazon Web Services (AWS), also in US regions. You want to query all your data in BigQuery daily with as little movement of data as possible. What should you do?
+- model: sim.answer
+  pk: 448
+  fields:
+    question: 112
+    text: Use BigQuery Data Transfer Service to load files from Azure and AWS into BigQuery.
+    is_correct: false
+- model: sim.answer
+  pk: 449
+  fields:
+    question: 112
+    text: Create a Dataflow pipeline to ingest files from Azure and AWS to BigQuery.
+    is_correct: false
+- model: sim.answer
+  pk: 450
+  fields:
+    question: 112
+    text: Load files from AWS and Azure to Cloud Storage with Cloud Shell gsutil rsync arguments.
+    is_correct: false
+- model: sim.answer
+  pk: 451
+  fields:
+    question: 112
+    text: Use the BigQuery Omni functionality and BigLake tables to query files in Azure and AWS.
+    is_correct: true
+
+- model: sim.question
+  pk: 113
+  fields:
+    quiz: 3
+    text: You have a variety of files in Cloud Storage that your data science team wants to use in their models. Currently, users do not have a method to explore, cleanse, and validate the data in Cloud Storage. You are looking for a low-code solution that can be used by your data science team to quickly cleanse and explore data within Cloud Storage. What should you do?
+- model: sim.answer
+  pk: 452
+  fields:
+    question: 113
+    text: Provide the data science team access to Dataflow to create a pipeline to prepare and validate the raw data and load data into BigQuery for data exploration.
+    is_correct: false
+- model: sim.answer
+  pk: 453
+  fields:
+    question: 113
+    text: Create an external table in BigQuery and use SQL to transform the data as necessary. Provide the data science team access to the external tables to explore the raw data.
+    is_correct: false
+- model: sim.answer
+  pk: 454
+  fields:
+    question: 113
+    text: Load the data into BigQuery and use SQL to transform the data as necessary. Provide the data science team access to staging tables to explore the raw data.
+    is_correct: false
+- model: sim.answer
+  pk: 455
+  fields:
+    question: 113
+    text: Provide the data science team access to Dataprep to prepare, validate, and explore the data within Cloud Storage.
+    is_correct: true
+
+- model: sim.question
+  pk: 114
+  fields:
+    quiz: 3
+    text: You are building an ELT solution in BigQuery by using Dataform. You need to perform uniqueness and null value checks on your final tables. What should you do to efficiently integrate these checks into your pipeline?
+- model: sim.answer
+  pk: 456
+  fields:
+    question: 114
+    text: Build BigQuery user-defined functions (UDFs).
+    is_correct: false
+- model: sim.answer
+  pk: 457
+  fields:
+    question: 114
+    text: Create Dataplex data quality tasks.
+    is_correct: false
+- model: sim.answer
+  pk: 458
+  fields:
+    question: 114
+    text: Build Dataform assertions into your code.
+    is_correct: true
+- model: sim.answer
+  pk: 459
+  fields:
+    question: 114
+    text: Write a Spark-based stored procedure.
+    is_correct: false
+
+- model: sim.question
+  pk: 115
+  fields:
+    quiz: 3
+    text: A web server sends click events to a Pub/Sub topic as messages. The web server includes an eventTimestamp attribute in the messages, which is the time when the click occurred. You have a Dataflow streaming job that reads from this Pub/Sub topic through a subscription, applies some transformations, and writes the result to another Pub/Sub topic for use by the advertising department. The advertising department needs to receive each message within 30 seconds of the corresponding click occurrence, but they report receiving the messages late. Your Dataflow job's system lag is about 5 seconds, and the data freshness is about 40 seconds. Inspecting a few messages show no more than 1 second lag between their eventTimestamp and publishTime. What is the problem and what should you do?
+- model: sim.answer
+  pk: 460
+  fields:
+    question: 115
+    text: The advertising department is causing delays when consuming the messages. Work with the advertising department to fix this.
+    is_correct: false
+- model: sim.answer
+  pk: 461
+  fields:
+    question: 115
+    text: Messages in your Dataflow job are taking more than 30 seconds to process. Optimize your job or increase the number of workers to fix this.
+    is_correct: false
+- model: sim.answer
+  pk: 462
+  fields:
+    question: 115
+    text: Messages in your Dataflow job are processed in less than 30 seconds, but your job cannot keep up with the backlog in the Pub/Sub subscription. Optimize your job or increase the number of workers to fix this.
+    is_correct: true
+- model: sim.answer
+  pk: 463
+  fields:
+    question: 115
+    text: The web server is not pushing messages fast enough to Pub/Sub. Work with the web server team to fix this.
+    is_correct: false
+
+- model: sim.question
+  pk: 116
+  fields:
+    quiz: 3
+    text: Your organization stores customer data in an on-premises Apache Hadoop cluster in Apache Parquet format. Data is processed on a daily basis by Apache Spark jobs that run on the cluster. You are migrating the Spark jobs and Parquet data to Google Cloud. BigQuery will be used on future transformation pipelines, so you need to ensure that your data is available in BigQuery. You want to use managed services while minimizing ETL data processing changes and overhead costs. What should you do?
+- model: sim.answer
+  pk: 464
+  fields:
+    question: 116
+    text: Migrate your data to Cloud Storage and migrate the metadata to Dataproc Metastore (DPMS). Refactor Spark pipelines to write and read data on Cloud Storage, and run them on Dataproc Serverless.
+    is_correct: true
+- model: sim.answer
+  pk: 465
+  fields:
+    question: 116
+    text: Migrate your data to Cloud Storage and register the bucket as a Dataplex asset. Refactor Spark pipelines to write and read data on Cloud Storage, and run them on Dataproc Serverless.
+    is_correct: false
+- model: sim.answer
+  pk: 466
+  fields:
+    question: 116
+    text: Migrate your data to BigQuery. Refactor Spark pipelines to write and read data on BigQuery, and run them on Dataproc Serverless.
+    is_correct: false
+- model: sim.answer
+  pk: 467
+  fields:
+    question: 116
+    text: Migrate your data to BigLake. Refactor Spark pipelines to write and read data on Cloud Storage, and run them on Dataproc on Compute Engine.
+    is_correct: false
+
+- model: sim.question
+  pk: 117
+  fields:
+    quiz: 3
+    text: Your organization has two Google Cloud projects, project A and project B. In project A, you have a Pub/Sub topic that receives data from confidential sources. Only the resources in project A should be able to access the data in that topic. You want to ensure that project B and any future project cannot access data in the project A topic. What should you do?
+- model: sim.answer
+  pk: 468
+  fields:
+    question: 117
+    text: Add firewall rules in project A so only traffic from the VPC in project A is permitted.
+    is_correct: false
+- model: sim.answer
+  pk: 469
+  fields:
+    question: 117
+    text: Configure VPC Service Controls in the organization with a perimeter around project A.
+    is_correct: true
+- model: sim.answer
+  pk: 470
+  fields:
+    question: 117
+    text: Use Identity and Access Management conditions to ensure that only users and service accounts in project A can access resources in project A.
+    is_correct: false
+- model: sim.answer
+  pk: 471
+  fields:
+    question: 117
+    text: Configure VPC Service Controls in the organization with a perimeter around the VPC of project A.
+    is_correct: false
+
+- model: sim.question
+  pk: 118
+  fields:
+    quiz: 3
+    text: You stream order data by using a Dataflow pipeline, and write the aggregated result to Memorystore. You provisioned a Memorystore for Redis instance with Basic Tier, 4 GB capacity, which is used by 40 clients for read-only access. You are expecting the number of read-only clients to increase significantly to a few hundred and you need to be able to support the demand. You want to ensure that read and write access availability is not impacted, and any changes you make can be deployed quickly. What should you do?
+- model: sim.answer
+  pk: 472
+  fields:
+    question: 118
+    text: Create a new Memorystore for Redis instance with Standard Tier. Set capacity to 4 GB and read replica to No read replicas (high availability only). Delete the old instance.
+    is_correct: false
+- model: sim.answer
+  pk: 473
+  fields:
+    question: 118
+    text: Create a new Memorystore for Redis instance with Standard Tier. Set capacity to 5 GB and create multiple read replicas. Delete the old instance.
+    is_correct: true
+- model: sim.answer
+  pk: 474
+  fields:
+    question: 118
+    text: Create a new Memorystore for Memcached instance. Set a minimum of three nodes, and memory per node to 4 GB. Modify the Dataflow pipeline and all clients to use the Memcached instance. Delete the old instance.
+    is_correct: false
+- model: sim.answer
+  pk: 475
+  fields:
+    question: 118
+    text: Create multiple new Memorystore for Redis instances with Basic Tier (4 GB capacity). Modify the Dataflow pipeline and new clients to use all instances.
+    is_correct: false
+
+- model: sim.question
+  pk: 119
+  fields:
+    quiz: 3
+    text: You currently use a SQL-based tool to visualize your data stored in BigQuery. The data visualizations require the use of outer joins and analytic functions. Visualizations must be based on data that is no less than 4 hours old. Business users are complaining that the visualizations are too slow to generate. You want to improve the performance of the visualization queries while minimizing the maintenance overhead of the data preparation pipeline. What should you do?
+- model: sim.answer
+  pk: 476
+  fields:
+    question: 119
+    text: Create materialized views with the allow_non_incremental_definition option set to true for the visualization queries. Specify the max_staleness parameter to 4 hours and the enable_refresh parameter to true. Reference the materialized views in the data visualization tool.
+    is_correct: true
+- model: sim.answer
+  pk: 477
+  fields:
+    question: 119
+    text: Create views for the visualization queries. Reference the views in the data visualization tool.
+    is_correct: false
+- model: sim.answer
+  pk: 478
+  fields:
+    question: 119
+    text: Create a Cloud Function instance to export the visualization query results as parquet files to a Cloud Storage bucket. Use Cloud Scheduler to trigger the Cloud Function every 4 hours. Reference the parquet files in the data visualization tool.
+    is_correct: false
+- model: sim.answer
+  pk: 479
+  fields:
+    question: 119
+    text: Create materialized views for the visualization queries. Use the incremental updates capability of BigQuery materialized views to handle changed data automatically. Reference the materialized views in the data visualization tool.
+    is_correct: false
+
+- model: sim.question
+  pk: 120
+  fields:
+    quiz: 3
+    text: You need to modernize your existing on-premises data strategy. Your organization currently use-> Apache Hadoop clusters for processing multiple large data sets, including on-premises Hadoop Distributed File System (HDFS) for data replication. Apache Airflow to orchestrate hundreds of ETL pipelines with thousands of job steps. You need to set up a new architecture in Google Cloud that can handle your Hadoop workloads and requires minimal changes to your existing orchestration processes. What should you do?
+- model: sim.answer
+  pk: 480
+  fields:
+    question: 120
+    text: Use Bigtable for your large workloads, with connections to Cloud Storage to handle any HDFS use cases. Orchestrate your pipelines with Cloud Composer.
+    is_correct: false
+- model: sim.answer
+  pk: 481
+  fields:
+    question: 120
+    text: Use Dataproc to migrate Hadoop clusters to Google Cloud, and Cloud Storage to handle any HDFS use cases. Orchestrate your pipelines with Cloud Composer.
+    is_correct: true
+- model: sim.answer
+  pk: 482
+  fields:
+    question: 120
+    text: Use Dataproc to migrate Hadoop clusters to Google Cloud, and Cloud Storage to handle any HDFS use cases. Convert your ETL pipelines to Dataflow.
+    is_correct: false
+- model: sim.answer
+  pk: 483
+  fields:
+    question: 120
+    text: Use Dataproc to migrate your Hadoop clusters to Google Cloud, and Cloud Storage to handle any HDFS use cases. Use Cloud Data Fusion to visually design and deploy your ETL pipelines.
+    is_correct: false
+
+
+- model: sim.question
+  pk: 121
+  fields:
+    quiz: 3
+    text: You are on the data governance team and are implementing security requirements to deploy resources. You need to ensure that resources are limited to only the europe-west3 region. You want to follow Google-recommended practices. What should you do?
+
+- model: sim.answer
+  pk: 484
+  fields:
+    question: 121
+    text: Set the constraints/gcp.resourceLocations organization policy constraint to in :europe-west3-locations.
+    is_correct: true
+
+- model: sim.answer
+  pk: 485
+  fields:
+    question: 121
+    text: Deploy resources with Terraform and implement a variable validation rule to ensure that the region is set to the europe-west3 region for all resources.
+    is_correct: false
+
+- model: sim.answer
+  pk: 486
+  fields:
+    question: 121
+    text: Set the constraints/gcp.resourceLocations organization policy constraint to in ::eu-locations.
+    is_correct: false
+
+- model: sim.answer
+  pk: 487
+  fields:
+    question: 121
+    text: Create a Cloud Function to monitor all resources created and automatically destroy the ones created outside the europe-west3 region.
+    is_correct: false
+
+
+- model: sim.question
+  pk: 122
+  fields:
+    quiz: 3
+    text: You are a BigQuery admin supporting a team of data consumers who run ad hoc queries and downstream reporting in tools such as Looker. All data and users are combined under a single organizational project. You recently noticed some slowness in query results and want to troubleshoot where the slowdowns are occurring. You think that there might be some job queuing or slot contention occurring as users run jobs, which slows down access to results. You need to investigate the query job information and determine where performance is being affected. What should you do?
+
+- model: sim.answer
+  pk: 488
+  fields:
+    question: 122
+    text: Use slot reservations for your project to ensure that you have enough query processing capacity and are able to allocate available slots to the slower queries.
+    is_correct: false
+
+- model: sim.answer
+  pk: 489
+  fields:
+    question: 122
+    text: Use Cloud Monitoring to view BigQuery metrics and set up alerts that let you know when a certain percentage of slots were used.
+    is_correct: false
+
+- model: sim.answer
+  pk: 490
+  fields:
+    question: 122
+    text: Use available administrative resource charts to determine how slots are being used and how jobs are performing over time. Run a query on the INFORMATION_SCHEMA to review query performance.
+    is_correct: true
+
+- model: sim.answer
+  pk: 491
+  fields:
+    question: 122
+    text: Use Cloud Logging to determine if any users or downstream consumers are changing or deleting access grants on tagged resources.
+    is_correct: false
+
+- model: sim.question
+  pk: 123
+  fields:
+    quiz: 3
+    text: You migrated a data backend for an application that serves 10 PB of historical product data for analytics. Only the last known state for a product, which is about 10 GB of data, needs to be served through an API to the other applications. You need to choose a cost-effective persistent storage solution that can accommodate the analytics requirements and the API performance of up to 1000 queries per second (QPS) with less than 1 second latency. What should you do?
+
+- model: sim.answer
+  pk: 492
+  fields:
+    question: 123
+    text: Store the historical data in BigQuery for analytics. Use a materialized view to precompute the last state of a product. Serve the last state data directly from BigQuery to the API.
+    is_correct: true
+
+- model: sim.answer
+  pk: 493
+  fields:
+    question: 123
+    text: Store the products as a collection in Firestore with each product having a set of historical changes. Use simple and compound queries for analytics. Serve the last state data directly from Firestore to the API.
+    is_correct: false
+
+- model: sim.answer
+  pk: 494
+  fields:
+    question: 123
+    text: Store the historical data in Cloud SQL for analytics. In a separate table, store the last state of the product after every product change. Serve the last state data directly from Cloud SQL to the API.
+    is_correct: false
+
+- model: sim.answer
+  pk: 495
+  fields:
+    question: 123
+    text: Store the historical data in BigQuery for analytics. In a Cloud SQL table, store the last state of the product after every product change. Serve the last state data directly from Cloud SQL to the API.
+    is_correct: false
+
+
+- model: sim.question
+  pk: 124
+  fields:
+    quiz: 3
+    text: You want to schedule a number of sequential load and transformation jobs. Data files will be added to a Cloud Storage bucket by an upstream process. There is no fixed schedule for when the new data arrives. Next, a Dataproc job is triggered to perform some transformations and write the data to BigQuery. You then need to run additional transformation jobs in BigQuery. The transformation jobs are different for every table. These jobs might take hours to complete. You need to determine the most efficient and maintainable workflow to process hundreds of tables and provide the freshest data to your end users. What should you do?
+
+- model: sim.answer
+  pk: 496
+  fields:
+    question: 124
+    text: Create an Apache Airflow directed acyclic graph (DAG) in Cloud Composer with sequential tasks by using the Cloud Storage, Dataproc, and BigQuery operators. Use a single shared DAG for all tables that need to go through the pipeline. Schedule the DAG to run hourly.
+    is_correct: false
+
+- model: sim.answer
+  pk: 497
+  fields:
+    question: 124
+    text: Create an Apache Airflow directed acyclic graph (DAG) in Cloud Composer with sequential tasks by using the Cloud Storage, Dataproc, and BigQuery operators. Create a separate DAG for each table that needs to go through the pipeline. Schedule the DAGs to run hourly.
+    is_correct: false
+
+- model: sim.answer
+  pk: 498
+  fields:
+    question: 124
+    text: Create an Apache Airflow directed acyclic graph (DAG) in Cloud Composer with sequential tasks by using the Dataproc and BigQuery operators. Use a single shared DAG for all tables that need to go through the pipeline. Use a Cloud Storage object trigger to launch a Cloud Function that triggers the DAG.
+    is_correct: false
+
+- model: sim.answer
+  pk: 499
+  fields:
+    question: 124
+    text: Create an Apache Airflow directed acyclic graph (DAG) in Cloud Composer with sequential tasks by using the Dataproc and BigQuery operators. Create a separate DAG for each table that needs to go through the pipeline. Use a Cloud Storage object trigger to launch a Cloud Function that triggers the DAG.
+    is_correct: true
+
+- model: sim.question
+  pk: 125
+  fields:
+    quiz: 3
+    text: You are deploying a MySQL database workload onto Cloud SQL. The database must be able to scale up to support several readers from various geographic regions. The database must be highly available and meet low RTO and RPO requirements, even in the event of a regional outage. You need to ensure that interruptions to the readers are minimal during a database failover. What should you do?
+
+- model: sim.answer
+  pk: 500
+  fields:
+    question: 125
+    text: Create a highly available Cloud SQL instance in region A. Create a highly available read replica in region B. Scale up read workloads by creating cascading read replicas in multiple regions. Promote the read replica in region B when region A is down.
+    is_correct: true
+
+- model: sim.answer
+  pk: 501
+  fields:
+    question: 125
+    text: Create a highly available Cloud SQL instance in region A. Scale up read workloads by creating read replicas in multiple regions. Promote one of the read replicas when region A is down.
+    is_correct: false
+
+- model: sim.answer
+  pk: 502
+  fields:
+    question: 125
+    text: Create a highly available Cloud SQL instance in region A. Create a highly available read replica in region B. Scale up read workloads by creating cascading read replicas in multiple regions. Backup the Cloud SQL instances to a multi-regional Cloud Storage bucket. Restore the Cloud SQL backup to a new instance in another region when Region A is down.
+    is_correct: false
+
+- model: sim.answer
+  pk: 503
+  fields:
+    question: 125
+    text: Create a highly available Cloud SQL instance in region A. Scale up read workloads by creating read replicas in the same region. Failover to the standby Cloud SQL instance when the primary instance fails.
+    is_correct: false
+
+
+- model: sim.question
+  pk: 126
+  fields:
+    quiz: 3
+    text: You are planning to load some of your existing on-premises data into BigQuery on Google Cloud. You want to either stream or batch-load data, depending on your use case. Additionally, you want to mask some sensitive data before loading into BigQuery. You need to do this in a programmatic way while keeping costs to a minimum. What should you do?
+
+- model: sim.answer
+  pk: 504
+  fields:
+    question: 126
+    text: Use Cloud Data Fusion to design your pipeline, use the Cloud DLP plug-in to de-identify data within your pipeline, and then move the data into BigQuery.
+    is_correct: false
+
+- model: sim.answer
+  pk: 505
+  fields:
+    question: 126
+    text: Use the BigQuery Data Transfer Service to schedule your migration. After the data is populated in BigQuery, use the connection to the Cloud Data Loss Prevention (Cloud DLP) API to de-identify the necessary data.
+    is_correct: false
+
+- model: sim.answer
+  pk: 506
+  fields:
+    question: 126
+    text: Create your pipeline with Dataflow through the Apache Beam SDK for Python, customizing separate options within your code for streaming, batch processing, and Cloud DLP. Select BigQuery as your data sink.
+    is_correct: true
+
+- model: sim.answer
+  pk: 507
+  fields:
+    question: 126
+    text: Set up Datastream to replicate your on-premise data on BigQuery.
+    is_correct: false
+
+
+- model: sim.question
+  pk: 127
+  fields:
+    quiz: 3
+    text: You want to encrypt the customer data stored in BigQuery. You need to implement per-user crypto-deletion on data stored in your tables. You want to adopt native features in Google Cloud to avoid custom solutions. What should you do?
+
+- model: sim.answer
+  pk: 508
+  fields:
+    question: 127
+    text: Implement Authenticated Encryption with Associated Data (AEAD) BigQuery functions while storing your data in BigQuery.
+    is_correct: true
+
+- model: sim.answer
+  pk: 509
+  fields:
+    question: 127
+    text: Create a customer-managed encryption key (CMEK) in Cloud KMS. Associate the key to the table while creating the table.
+    is_correct: false
+
+- model: sim.answer
+  pk: 510
+  fields:
+    question: 127
+    text: Create a customer-managed encryption key (CMEK) in Cloud KMS. Use the key to encrypt data before storing in BigQuery.
+    is_correct: false
+
+- model: sim.answer
+  pk: 511
+  fields:
+    question: 127
+    text: Encrypt your data during ingestion by using a cryptographic library supported by your ETL pipeline.
+    is_correct: false
+
+
+- model: sim.question
+  pk: 128
+  fields:
+    quiz: 3
+    text: The data analyst team at your company uses BigQuery for ad-hoc queries and scheduled SQL pipelines in a Google Cloud project with a slot reservation of 2000 slots. However, with the recent introduction of hundreds of new non-time-sensitive SQL pipelines, the team is encountering frequent quota errors. You examine the logs and notice that approximately 1500 queries are being triggered concurrently during peak time. You need to resolve the concurrency issue. What should you do?
+
+- model: sim.answer
+  pk: 512
+  fields:
+    question: 128
+    text: Increase the slot capacity of the project with baseline as 0 and maximum reservation size as 3000.
+    is_correct: false
+
+- model: sim.answer
+  pk: 513
+  fields:
+    question: 128
+    text: Update SQL pipelines to run as a batch query, and run ad-hoc queries as interactive query jobs.
+    is_correct: true
+
+- model: sim.answer
+  pk: 514
+  fields:
+    question: 128
+    text: Increase the slot capacity of the project with baseline as 2000 and maximum reservation size as 3000.
+    is_correct: false
+
+- model: sim.answer
+  pk: 515
+  fields:
+    question: 128
+    text: Update SQL pipelines and ad-hoc queries to run as interactive query jobs.
+    is_correct: false
+
+
+- model: sim.question
+  pk: 129
+  fields:
+    quiz: 3
+    text: You are designing a data mesh on Google Cloud by using Dataplex to manage data in BigQuery and Cloud Storage. You want to simplify data asset permissions. You are creating a customer virtual lake with two user groups->
+      - Data engineers, which require full data lake access
+      - Analytic users, which require access to curated data
+      You need to assign access rights to these two groups. What should you do?
+
+- model: sim.answer
+  pk: 516
+  fields:
+    question: 129
+    text: 1. Grant the dataplex.dataOwner role to the data engineer group on the customer data lake. 2. Grant the dataplex.dataReader role to the analytic user group on the customer curated zone.
+    is_correct: true
+
+- model: sim.answer
+  pk: 517
+  fields:
+    question: 129
+    text: |
+      1. Grant the dataplex.dataReader role to the data engineer group on the customer data lake.
+      2. Grant the dataplex.dataOwner role to the analytic user group on the customer curated zone.
+    is_correct: false
+
+- model: sim.answer
+  pk: 518
+  fields:
+    question: 129
+    text: |
+      1. Grant the bigquery.dataOwner role on BigQuery datasets and the storage.objectCreator role on Cloud Storage buckets to data engineers.
+      2. Grant the bigquery.dataViewer role on BigQuery datasets and the storage.objectViewer role on Cloud Storage buckets to analytic users.
+    is_correct: false
+
+- model: sim.answer
+  pk: 519
+  fields:
+    question: 129
+    text: |
+      1. Grant the bigquery.dataViewer role on BigQuery datasets and the storage.objectViewer role on Cloud Storage buckets to data engineers.
+      2. Grant the bigquery.dataOwner role on BigQuery datasets and the storage.objectEditor role on Cloud Storage buckets to analytic users.
+    is_correct: false
+
+
+- model: sim.question
+  pk: 130
+  fields:
+    quiz: 3
+    text: You are designing the architecture of your application to store data in Cloud Storage. Your application consists of pipelines that read data from a Cloud Storage bucket that contains raw data, and write the data to a second bucket after processing. You want to design an architecture with Cloud Storage resources that are capable of being resilient if a Google Cloud regional failure occurs. You want to minimize the recovery point objective (RPO) if a failure occurs, with no impact on applications that use the stored data. What should you do?
+
+- model: sim.answer
+  pk: 520
+  fields:
+    question: 130
+    text: Adopt a dual-region Cloud Storage bucket, and enable turbo replication in your architecture.
+    is_correct: true
+
+- model: sim.answer
+  pk: 521
+  fields:
+    question: 130
+    text: Adopt multi-regional Cloud Storage buckets in your architecture.
+    is_correct: false
+
+- model: sim.answer
+  pk: 522
+  fields:
+    question: 130
+    text: Adopt two regional Cloud Storage buckets, and update your application to write the output on both buckets.
+    is_correct: false
+
+- model: sim.answer
+  pk: 523
+  fields:
+    question: 130
+    text: Adopt two regional Cloud Storage buckets, and create a daily task to copy from one bucket to the other.
+    is_correct: false
+
+
+- model: sim.question
+  pk: 131
+  fields:
+    quiz: 3
+    text: You have designed an Apache Beam processing pipeline that reads from a Pub/Sub topic. The topic has a message retention duration of one day, and writes to a Cloud Storage bucket. You need to select a bucket location and processing strategy to prevent data loss in case of a regional outage with an RPO of 15 minutes. What should you do?
+
+- model: sim.answer
+  pk: 524
+  fields:
+    question: 131
+    text: |
+      1. Use a dual-region Cloud Storage bucket with turbo replication enabled.
+      2. Monitor Dataflow metrics with Cloud Monitoring to determine when an outage occurs.
+      3. Seek the subscription back in time by 60 minutes to recover the acknowledged messages. 4. Start the Dataflow job in a secondary region.
+    is_correct: true
+
+- model: sim.answer
+  pk: 525
+  fields:
+    question: 131
+    text: |
+      1. Use a multi-regional Cloud Storage bucket.
+      2. Monitor Dataflow metrics with Cloud Monitoring to determine when an outage occurs.
+      3. Seek the subscription back in time by 60 minutes to recover the acknowledged messages.
+      4. Start the Dataflow job in a secondary region.
+    is_correct: false
+
+- model: sim.answer
+  pk: 526
+  fields:
+    question: 131
+    text: |
+      1. Use a regional Cloud Storage bucket.
+      2. Monitor Dataflow metrics with Cloud Monitoring to determine when an outage occurs.
+      3. Seek the subscription back in time by one day to recover the acknowledged messages.
+      4. Start the Dataflow job in a secondary region and write in a bucket in the same region.
+    is_correct: false
+
+- model: sim.answer
+  pk: 527
+  fields:
+    question: 131
+    text: |
+      1. Use a dual-region Cloud Storage bucket.
+      2. Monitor Dataflow metrics with Cloud Monitoring to determine when an outage occurs.
+      3. Seek the subscription back in time by 15 minutes to recover the acknowledged messages.
+      4. Start the Dataflow job in a secondary region.
+    is_correct: false
+
+
+- model: sim.question
+  pk: 132
+  fields:
+    quiz: 3
+    text: Different teams in your organization store customer and performance data in BigQuery. Each team needs to keep full control of their collected data, be able to query data within their projects, and be able to exchange their data with other teams. You need to implement an organization-wide solution, while minimizing operational tasks and costs. What should you do?
+
+- model: sim.answer
+  pk: 528
+  fields:
+    question: 132
+    text: Ask each team to publish their data in Analytics Hub. Direct the other teams to subscribe to them.
+    is_correct: true
+
+- model: sim.answer
+  pk: 529
+  fields:
+    question: 132
+    text: Ask each team to create authorized views of their data. Grant the bigquery.jobUser role to each team.
+    is_correct: false
+
+- model: sim.answer
+  pk: 530
+  fields:
+    question: 132
+    text: Create a BigQuery scheduled query to replicate all customer data into team projects.
+    is_correct: false
+
+- model: sim.answer
+  pk: 531
+  fields:
+    question: 132
+    text: Enable each team to create materialized views of the data they need to access in their projects.
+    is_correct: false
+
+- model: sim.question
+  pk: 133
+  fields:
+    quiz: 3
+    text: You are developing a model to identify the factors that lead to sales conversions for your customers. You have completed processing your data. You want to continue through the model development lifecycle. What should you do next?
+
+- model: sim.answer
+  pk: 532
+  fields:
+    question: 133
+    text: Delineate what data will be used for testing and what will be used for training the model.
+    is_correct: true
+
+- model: sim.answer
+  pk: 533
+  fields:
+    question: 133
+    text: Use your model to run predictions on fresh customer input data.
+    is_correct: false
+
+- model: sim.answer
+  pk: 534
+  fields:
+    question: 133
+    text: Monitor your model performance, and make any adjustments needed.
+    is_correct: false
+
+- model: sim.answer
+  pk: 535
+  fields:
+    question: 133
+    text: Test and evaluate your model on your curated data to determine how well the model performs.
+    is_correct: false
+
+
+- model: sim.question
+  pk: 134
+  fields:
+    quiz: 3
+    text: You have one BigQuery dataset which includes customers’ street addresses. You want to retrieve all occurrences of street addresses from the dataset. What should you do?
+
+- model: sim.answer
+  pk: 536
+  fields:
+    question: 134
+    text: Create a deep inspection job on each table in your dataset with Cloud Data Loss Prevention and create an inspection template that includes the STREET_ADDRESS infoType.
+    is_correct: true
+
+- model: sim.answer
+  pk: 537
+  fields:
+    question: 134
+    text: Write a SQL query in BigQuery by using REGEXP_CONTAINS on all tables in your dataset to find rows where the word “street” appears.
+    is_correct: false
+
+- model: sim.answer
+  pk: 538
+  fields:
+    question: 134
+    text: Create a discovery scan configuration on your organization with Cloud Data Loss Prevention and create an inspection template that includes the STREET_ADDRESS infoType.
+    is_correct: false
+
+- model: sim.answer
+  pk: 539
+  fields:
+    question: 134
+    text: Create a de-identification job in Cloud Data Loss Prevention and use the masking transformation.
+    is_correct: false
+
+
+- model: sim.question
+  pk: 135
+  fields:
+    quiz: 3
+    text: Your company operates in three domains-> airlines, hotels, and ride-hailing services. Each domain has two teams-> analytics and data science, which create data assets in BigQuery with the help of a central data platform team. However, as each domain is evolving rapidly, the central data platform team is becoming a bottleneck. This is causing delays in deriving insights from data, and resulting in stale data when pipelines are not kept up to date. You need to design a data mesh architecture by using Dataplex to eliminate the bottleneck. What should you do?
+
+- model: sim.answer
+  pk: 540
+  fields:
+    question: 135
+    text: 1. Create one lake for each domain. Inside each lake, create one zone for each team. 2. Attach each of the BigQuery datasets created by the individual teams as assets to the respective zone. 3. Direct each domain to manage their own lake’s data assets.
+    is_correct: true
+
+- model: sim.answer
+  pk: 541
+  fields:
+    question: 135
+    text: 1. Create one lake for each team. Inside each lake, create one zone for each domain. 2. Attach each of the BigQuery datasets created by the individual teams as assets to the respective zone. 3. Direct each domain to manage their own zone’s data assets.
+    is_correct: false
+
+- model: sim.answer
+  pk: 542
+  fields:
+    question: 135
+    text: 1. Create one lake for each team. Inside each lake, create one zone for each domain. 2. Attach each of the BigQuery datasets created by the individual teams as assets to the respective zone. 3. Have the central data platform team manage all zones’ data assets.
+    is_correct: false
+
+- model: sim.answer
+  pk: 543
+  fields:
+    question: 135
+    text: 1. Create one lake for each domain. Inside each lake, create one zone for each team. 2. Attach each of the BigQuery datasets created by the individual teams as assets to the respective zone. 3. Have the central data platform team manage all lakes’ data assets.
+    is_correct: false
+
+
+- model: sim.question
+  pk: 136
+  fields:
+    quiz: 3
+    text: |
+      Your team is building a data lake platform on Google Cloud. As a part of the data foundation design, you are planning to store all the raw data in Cloud Storage. You are expecting to ingest approximately 25 GB of data a day and your billing department is worried about the increasing cost of storing old data. The current business requirements are:
+      - The old data can be deleted anytime.
+      - There is no predefined access pattern of the old data.
+      - The old data should be available instantly when accessed.
+      - There should not be any charges for data retrieval.
+      What should you do to optimize for cost?
+
+- model: sim.answer
+  pk: 544
+  fields:
+    question: 136
+    text: Create the bucket with the Autoclass storage class feature.
+    is_correct: true
+
+- model: sim.answer
+  pk: 545
+  fields:
+    question: 136
+    text: Create an Object Lifecycle Management policy to modify the storage class for data older than 30 days to nearline, 90 days to coldline, and 365 days to archive storage class. Delete old data as needed.
+    is_correct: false
+
+- model: sim.answer
+  pk: 546
+  fields:
+    question: 136
+    text: Create an Object Lifecycle Management policy to modify the storage class for data older than 30 days to coldline, 90 days to nearline, and 365 days to archive storage class. Delete old data as needed.
+    is_correct: false
+
+- model: sim.answer
+  pk: 547
+  fields:
+    question: 136
+    text: Create an Object Lifecycle Management policy to modify the storage class for data older than 30 days to nearline, 45 days to coldline, and 60 days to archive storage class. Delete old data as needed.
+    is_correct: false
+
+
+- model: sim.question
+  pk: 137
+  fields:
+    quiz: 3
+    text: Your company's data platform ingests CSV file dumps of booking and user profile data from upstream sources into Cloud Storage. The data analyst team wants to join these datasets on the email field available in both the datasets to perform analysis. However, personally identifiable information (PII) should not be accessible to the analysts. You need to de-identify the email field in both the datasets before loading them into BigQuery for analysts. What should you do?
+
+- model: sim.answer
+  pk: 548
+  fields:
+    question: 137
+    text: |
+      1. Create a pipeline to de-identify the email field by using recordTransformations in Cloud Data Loss Prevention (Cloud DLP) with masking as the de-identification transformations type.  
+      2. Load the booking and user profile data into a BigQuery table.
+    is_correct: false
+
+- model: sim.answer
+  pk: 549
+  fields:
+    question: 137
+    text: |
+      1. Create a pipeline to de-identify the email field by using recordTransformations in Cloud DLP with format-preserving encryption with FFX as the de-identification transformation type.  
+      2. Load the booking and user profile data into a BigQuery table.
+    is_correct: true
+
+- model: sim.answer
+  pk: 550
+  fields:
+    question: 137
+    text: |
+      1. Load the CSV files from Cloud Storage into a BigQuery table, and enable dynamic data masking.  
+      2. Create a policy tag with the email mask as the data masking rule.  
+      3. Assign the policy to the email field in both tables.  
+      4. Assign the Identity and Access Management bigquerydatapolicy.maskedReader role for the BigQuery tables to the analysts.
+    is_correct: false
+
+- model: sim.answer
+  pk: 551
+  fields:
+    question: 137
+    text: |
+      1. Load the CSV files from Cloud Storage into a BigQuery table, and enable dynamic data masking.  
+      2. Create a policy tag with the default masking value as the data masking rule.  
+      3. Assign the policy to the email field in both tables.  
+      4. Assign the Identity and Access Management bigquerydatapolicy.maskedReader role for the BigQuery tables to the analysts.
+    is_correct: false
+
+
+- model: sim.question
+  pk: 138
+  fields:
+    quiz: 3
+    text: You have important legal hold documents in a Cloud Storage bucket. You need to ensure that these documents are not deleted or modified. What should you do?
+
+- model: sim.answer
+  pk: 552
+  fields:
+    question: 138
+    text: Set a retention policy. Lock the retention policy.
+    is_correct: true
+
+- model: sim.answer
+  pk: 553
+  fields:
+    question: 138
+    text: Set a retention policy. Set the default storage class to Archive for long-term digital preservation.
+    is_correct: false
+
+- model: sim.answer
+  pk: 554
+  fields:
+    question: 138
+    text: Enable the Object Versioning feature. Add a lifecycle rule.
+    is_correct: false
+
+- model: sim.answer
+  pk: 555
+  fields:
+    question: 138
+    text: Enable the Object Versioning feature. Create a copy in a bucket in a different region.
+    is_correct: false
+
+
+- model: sim.question
+  pk: 139
+  fields:
+    quiz: 3
+    text: You are designing a data warehouse in BigQuery to analyze sales data for a telecommunication service provider. You need to create a data model for customers, products, and subscriptions. All customers, products, and subscriptions can be updated monthly, but you must maintain a historical record of all data. You plan to use the visualization layer for current and historical reporting. You need to ensure that the data model is simple, easy-to-use, and cost-effective. What should you do?
+
+- model: sim.answer
+  pk: 556
+  fields:
+    question: 139
+    text: Create a normalized model with tables for each entity. Use snapshots before updates to track historical data.
+    is_correct: false
+
+- model: sim.answer
+  pk: 557
+  fields:
+    question: 139
+    text: Create a normalized model with tables for each entity. Keep all input files in a Cloud Storage bucket to track historical data.
+    is_correct: false
+
+- model: sim.answer
+  pk: 558
+  fields:
+    question: 139
+    text: Create a denormalized model with nested and repeated fields. Update the table and use snapshots to track historical data.
+    is_correct: false
+
+- model: sim.answer
+  pk: 559
+  fields:
+    question: 139
+    text: Create a denormalized, append-only model with nested and repeated fields. Use the ingestion timestamp to track historical data.
+    is_correct: true
+
+- model: sim.question
+  pk: 140
+  fields:
+    quiz: 3
+    text: You are deploying a batch pipeline in Dataflow. This pipeline reads data from Cloud Storage, transforms the data, and then writes the data into BigQuery. The security team has enabled an organizational constraint in Google Cloud, requiring all Compute Engine instances to use only internal IP addresses and no external IP addresses. What should you do?
+
+- model: sim.answer
+  pk: 560
+  fields:
+    question: 140
+    text: Ensure that your workers have network tags to access Cloud Storage and BigQuery. Use Dataflow with only internal IP addresses.
+    is_correct: false
+
+- model: sim.answer
+  pk: 561
+  fields:
+    question: 140
+    text: Ensure that the firewall rules allow access to Cloud Storage and BigQuery. Use Dataflow with only internal IPs.
+    is_correct: false
+
+- model: sim.answer
+  pk: 562
+  fields:
+    question: 140
+    text: Create a VPC Service Controls perimeter that contains the VPC network and add Dataflow, Cloud Storage, and BigQuery as allowed services in the perimeter. Use Dataflow with only internal IP addresses.
+    is_correct: false
+
+- model: sim.answer
+  pk: 563
+  fields:
+    question: 140
+    text: Ensure that Private Google Access is enabled in the subnetwork. Use Dataflow with only internal IP addresses.
+    is_correct: true
+
+- model: sim.question
+  pk: 141
+  fields:
+    quiz: 3
+    text: You are running a Dataflow streaming pipeline, with Streaming Engine and Horizontal Autoscaling enabled. You have set the maximum number of workers to 1000. The input of your pipeline is Pub/Sub messages with notifications from Cloud Storage. One of the pipeline transforms reads CSV files and emits an element for every CSV line. The job performance is low, the pipeline is using only 10 workers, and you notice that the autoscaler is not spinning up additional workers. What should you do to improve performance?
+
+- model: sim.answer
+  pk: 564
+  fields:
+    question: 141
+    text: Enable Vertical Autoscaling to let the pipeline use larger workers.
+    is_correct: false
+
+- model: sim.answer
+  pk: 565
+  fields:
+    question: 141
+    text: Change the pipeline code, and introduce a Reshuffle step to prevent fusion.
+    is_correct: true
+
+- model: sim.answer
+  pk: 566
+  fields:
+    question: 141
+    text: Update the job to increase the maximum number of workers.
+    is_correct: false
+
+- model: sim.answer
+  pk: 567
+  fields:
+    question: 141
+    text: Use Dataflow Prime, and enable Right Fitting to increase the worker resources.
+    is_correct: false
+
+- model: sim.question
+  pk: 142
+  fields:
+    quiz: 3
+    text: You have an Oracle database deployed in a VM as part of a Virtual Private Cloud (VPC) network. You want to replicate and continuously synchronize 50 tables to BigQuery. You want to minimize the need to manage infrastructure. What should you do?
+
+- model: sim.answer
+  pk: 568
+  fields:
+    question: 142
+    text: Deploy Apache Kafka in the same VPC network, use Kafka Connect Oracle Change Data Capture (CDC), and Dataflow to stream the Kafka topic to BigQuery.
+    is_correct: false
+
+- model: sim.answer
+  pk: 569
+  fields:
+    question: 142
+    text: Create a Pub/Sub subscription to write to BigQuery directly. Deploy the Debezium Oracle connector to capture changes in the Oracle database, and sink to the Pub/Sub topic.
+    is_correct: false
+
+- model: sim.answer
+  pk: 570
+  fields:
+    question: 142
+    text: Deploy Apache Kafka in the same VPC network, use Kafka Connect Oracle change data capture (CDC), and the Kafka Connect Google BigQuery Sink Connector.
+    is_correct: false
+
+- model: sim.answer
+  pk: 571
+  fields:
+    question: 142
+    text: Create a Datastream service from Oracle to BigQuery, use a private connectivity configuration to the same VPC network, and a connection profile to BigQuery.
+    is_correct: true
+
+
+- model: sim.question
+  pk: 143
+  fields:
+    quiz: 3
+    text: You are planning to use Cloud Storage as part of your data lake solution. The Cloud Storage bucket will contain objects ingested from external systems. Each object will be ingested once, and the access patterns of individual objects will be random. You want to minimize the cost of storing and retrieving these objects. You want to ensure that any cost optimization efforts are transparent to the users and applications. What should you do?
+
+- model: sim.answer
+  pk: 576
+  fields:
+    question: 143
+    text: Create a Cloud Storage bucket with Autoclass enabled.
+    is_correct: true
+
+- model: sim.answer
+  pk: 577
+  fields:
+    question: 143
+    text: Create a Cloud Storage bucket with an Object Lifecycle Management policy to transition objects from Standard to Coldline storage class if an object age reaches 30 days.
+    is_correct: false
+
+- model: sim.answer
+  pk: 578
+  fields:
+    question: 143
+    text: Create a Cloud Storage bucket with an Object Lifecycle Management policy to transition objects from Standard to Coldline storage class if an object is not live.
+    is_correct: false
+
+- model: sim.answer
+  pk: 579
+  fields:
+    question: 143
+    text: Create two Cloud Storage buckets. Use the Standard storage class for the first bucket, and use the Coldline storage class for the second bucket. Migrate objects from the first bucket to the second bucket after 30 days.
+    is_correct: false
+
+- model: sim.question
+  pk: 144
+  fields:
+    quiz: 3
+    text: You have several different file type data sources, such as Apache Parquet and CSV. You want to store the data in Cloud Storage. You need to set up an object sink for your data that allows you to use your own encryption keys. You want to use a GUI-based solution. What should you do?
+
+- model: sim.answer
+  pk: 580
+  fields:
+    question: 144
+    text: Use Storage Transfer Service to move files into Cloud Storage.
+    is_correct: false
+
+- model: sim.answer
+  pk: 581
+  fields:
+    question: 144
+    text: Use Cloud Data Fusion to move files into Cloud Storage.
+    is_correct: true
+
+- model: sim.answer
+  pk: 582
+  fields:
+    question: 144
+    text: Use Dataflow to move files into Cloud Storage.
+    is_correct: false
+
+- model: sim.answer
+  pk: 583
+  fields:
+    question: 144
+    text: Use BigQuery Data Transfer Service to move files into BigQuery.
+    is_correct: false
+
+- model: sim.question
+  pk: 145
+  fields:
+    quiz: 3
+    text: Your business users need a way to clean and prepare data before using the data for analysis. Your business users are less technically savvy and prefer to work with graphical user interfaces to define their transformations. After the data has been transformed, the business users want to perform their analysis directly in a spreadsheet. You need to recommend a solution that they can use.
+
+- model: sim.answer
+  pk: 584
+  fields:
+    question: 145
+    text: Use Dataprep to clean the data, and write the results to BigQuery. Analyze the data by using Connected Sheets.
+    is_correct: true
+
+- model: sim.answer
+  pk: 585
+  fields:
+    question: 145
+    text: Use Dataprep to clean the data, and write the results to BigQuery. Analyze the data by using Looker Studio.
+    is_correct: false
+
+- model: sim.answer
+  pk: 586
+  fields:
+    question: 145
+    text: Use Dataflow to clean the data, and write the results to BigQuery. Analyze the data by using Connected Sheets.
+    is_correct: false
+
+- model: sim.answer
+  pk: 587
+  fields:
+    question: 145
+    text: Use Dataflow to clean the data, and write the results to BigQuery. Analyze the data by using Looker Studio.
+    is_correct: false
+
+
+- model: sim.question
+  pk: 146
+  fields:
+    quiz: 3
+    text: |
+      You have two projects where you run BigQuery jobs:
+      - One project runs production jobs that have strict completion time SLAs. These are high priority jobs that must have the required compute resources available when needed. These jobs generally never go below a 300 slot utilization, but occasionally spike up an additional 500 slots.
+      - The other project is for users to run ad-hoc analytical queries. This project generally never uses more than 200 slots at a time. You want these ad-hoc queries to be billed based on how much data users scan rather than by slot capacity.
+      - You need to ensure that both projects have the appropriate compute resources available. What should you do?
+
+- model: sim.answer
+  pk: 588
+  fields:
+    question: 146
+    text: Create a single Enterprise Edition reservation for both projects. Set a baseline of 300 slots. Enable autoscaling up to 700 slots.
+    is_correct: false
+
+- model: sim.answer
+  pk: 589
+  fields:
+    question: 146
+    text: Create two reservations, one for each of the projects. For the SLA project, use an Enterprise Edition with a baseline of 300 slots and enable autoscaling up to 500 slots. For the ad-hoc project, configure on-demand billing.
+    is_correct: true
+
+- model: sim.answer
+  pk: 590
+  fields:
+    question: 146
+    text: Create two Enterprise Edition reservations, one for each of the projects. For the SLA project, set a baseline of 300 slots and enable autoscaling up to 500 slots. For the ad-hoc project, set a reservation baseline of 0 slots and set the ignore idle slots flag to False.
+    is_correct: false
+
+- model: sim.answer
+  pk: 591
+  fields:
+    question: 146
+    text: Create two Enterprise Edition reservations, one for each of the projects. For the SLA project, set a baseline of 800 slots. For the ad-hoc project, enable autoscaling up to 200 slots.
+    is_correct: false
+
+- model: sim.question
+  pk: 147
+  fields:
+    quiz: 3
+    text: You want to migrate your existing Teradata data warehouse to BigQuery. You want to move the historical data to BigQuery by using the most efficient method that requires the least amount of programming, but local storage space on your existing data warehouse is limited. What should you do?
+
+- model: sim.answer
+  pk: 592
+  fields:
+    question: 147
+    text: Use BigQuery Data Transfer Service by using the Java Database Connectivity (JDBC) driver with FastExport connection.
+    is_correct: true
+
+- model: sim.answer
+  pk: 593
+  fields:
+    question: 147
+    text: Create a Teradata Parallel Transporter (TPT) export script to export the historical data, and import to BigQuery by using the bq command-line tool.
+    is_correct: false
+
+- model: sim.answer
+  pk: 594
+  fields:
+    question: 147
+    text: Use BigQuery Data Transfer Service with the Teradata Parallel Transporter (TPT) tbuild utility.
+    is_correct: false
+
+- model: sim.answer
+  pk: 595
+  fields:
+    question: 147
+    text: Create a script to export the historical data, and upload in batches to Cloud Storage. Set up a BigQuery Data Transfer Service instance from Cloud Storage to BigQuery.
+    is_correct: false
+
+- model: sim.question
+  pk: 148
+  fields:
+    quiz: 3
+    text: You are on the data governance team and are implementing security requirements. You need to encrypt all your data in BigQuery by using an encryption key managed by your team. You must implement a mechanism to generate and store encryption material only on your on-premises hardware security module (HSM). You want to rely on Google managed solutions. What should you do?
+
+- model: sim.answer
+  pk: 596
+  fields:
+    question: 148
+    text: Create the encryption key in the on-premises HSM, and import it into a Cloud Key Management Service (Cloud KMS) key. Associate the created Cloud KMS key while creating the BigQuery resources.
+    is_correct: false
+
+- model: sim.answer
+  pk: 597
+  fields:
+    question: 148
+    text: Create the encryption key in the on-premises HSM and link it to a Cloud External Key Manager (Cloud EKM) key. Associate the created Cloud KMS key while creating the BigQuery resources.
+    is_correct: true
+
+- model: sim.answer
+  pk: 598
+  fields:
+    question: 148
+    text: Create the encryption key in the on-premises HSM, and import it into Cloud Key Management Service (Cloud HSM) key. Associate the created Cloud HSM key while creating the BigQuery resources.
+    is_correct: false
+
+- model: sim.answer
+  pk: 599
+  fields:
+    question: 148
+    text: Create the encryption key in the on-premises HSM. Create BigQuery resources and encrypt data while ingesting them into BigQuery.
+    is_correct: false
+
+
+- model: sim.question
+  pk: 149
+  fields:
+    quiz: 3
+    text: You maintain ETL pipelines. You notice that a streaming pipeline running on Dataflow is taking a long time to process incoming data, which causes output delays. You also noticed that the pipeline graph was automatically optimized by Dataflow and merged into one step. You want to identify where the potential bottleneck is occurring. What should you do?
+
+- model: sim.answer
+  pk: 600
+  fields:
+    question: 149
+    text: Insert a Reshuffle operation after each processing step, and monitor the execution details in the Dataflow console.
+    is_correct: true
+
+- model: sim.answer
+  pk: 601
+  fields:
+    question: 149
+    text: Insert output sinks after each key processing step, and observe the writing throughput of each block.
+    is_correct: false
+
+- model: sim.answer
+  pk: 602
+  fields:
+    question: 149
+    text: Log debug information in each ParDo function, and analyze the logs at execution time.
+    is_correct: false
+
+- model: sim.answer
+  pk: 603
+  fields:
+    question: 149
+    text: Verify that the Dataflow service accounts have appropriate permissions to write the processed data to the output sinks.
+    is_correct: false
+
+- model: sim.question
+  pk: 150
+  fields:
+    quiz: 3
+    text: You are running your BigQuery project in the on-demand billing model and are executing a change data capture (CDC) process that ingests data. The CDC process loads 1 GB of data every 10 minutes into a temporary table, and then performs a merge into a 10 TB target table. This process is very scan intensive and you want to explore options to enable a predictable cost model. You need to create a BigQuery reservation based on utilization information gathered from BigQuery Monitoring and apply the reservation to the CDC process. What should you do?
+
+- model: sim.answer
+  pk: 604
+  fields:
+    question: 150
+    text: Create a BigQuery reservation for the dataset.
+    is_correct: false
+
+- model: sim.answer
+  pk: 605
+  fields:
+    question: 150
+    text: Create a BigQuery reservation for the job.
+    is_correct: false
+
+- model: sim.answer
+  pk: 606
+  fields:
+    question: 150
+    text: Create a BigQuery reservation for the service account running the job.
+    is_correct: false
+
+- model: sim.answer
+  pk: 607
+  fields:
+    question: 150
+    text: Create a BigQuery reservation for the project.
+    is_correct: true
+
+- model: sim.question
+  pk: 151
+  fields:
+    quiz: 3
+    text: You are designing a fault-tolerant architecture to store data in a regional BigQuery dataset. You need to ensure that your application is able to recover from a corruption event in your tables that occurred within the past seven days. You want to adopt managed services with the lowest RPO and most cost-effective solution. What should you do?
+
+- model: sim.answer
+  pk: 608
+  fields:
+    question: 151
+    text: Access historical data by using time travel in BigQuery.
+    is_correct: true
+
+- model: sim.answer
+  pk: 609
+  fields:
+    question: 151
+    text: Export the data from BigQuery into a new table that excludes the corrupted data.
+    is_correct: false
+
+- model: sim.answer
+  pk: 610
+  fields:
+    question: 151
+    text: Create a BigQuery table snapshot on a daily basis.
+    is_correct: false
+
+- model: sim.answer
+  pk: 611
+  fields:
+    question: 151
+    text: Migrate your data to multi-region BigQuery buckets.
+    is_correct: false
+
+- model: sim.question
+  pk: 152
+  fields:
+    quiz: 3
+    text: You are building a streaming Dataflow pipeline that ingests noise level data from hundreds of sensors placed near construction sites across a city. The sensors measure noise level every ten seconds, and send that data to the pipeline when levels reach above 70 dBA. You need to detect the average noise level from a sensor when data is received for a duration of more than 30 minutes, but the window ends when no data has been received for 15 minutes. What should you do?
+
+- model: sim.answer
+  pk: 612
+  fields:
+    question: 152
+    text: Use session windows with a 15-minute gap duration.
+    is_correct: true
+
+- model: sim.answer
+  pk: 613
+  fields:
+    question: 152
+    text: Use session windows with a 30-minute gap duration.
+    is_correct: false
+
+- model: sim.answer
+  pk: 614
+  fields:
+    question: 152
+    text: Use hopping windows with a 15-minute window, and a thirty-minute period.
+    is_correct: false
+
+- model: sim.answer
+  pk: 615
+  fields:
+    question: 152
+    text: Use tumbling windows with a 15-minute window and a fifteen-minute .withAllowedLateness operator.
+    is_correct: false
+
+- model: sim.question
+  pk: 153
+  fields:
+    quiz: 3
+    text: You are creating a data model in BigQuery that will hold retail transaction data. Your two largest tables, sales_transaction_header and sales_transaction_line, have a tightly coupled immutable relationship. These tables are rarely modified after load and are frequently joined when queried. You need to model the sales_transaction_header and sales_transaction_line tables to improve the performance of data analytics queries. What should you do?
+
+- model: sim.answer
+  pk: 616
+  fields:
+    question: 153
+    text: Create a sales_transaction table that holds the sales_transaction_header information as rows and the sales_transaction_line rows as nested and repeated fields.
+    is_correct: true
+
+- model: sim.answer
+  pk: 617
+  fields:
+    question: 153
+    text: Create a sales_transaction table that holds the sales_transaction_header and sales_transaction_line information as rows, duplicating the sales_transaction_header data for each line.
+    is_correct: false
+
+- model: sim.answer
+  pk: 618
+  fields:
+    question: 153
+    text: Create a sales_transaction table that stores the sales_transaction_header and sales_transaction_line data as a JSON data type.
+    is_correct: false
+
+- model: sim.answer
+  pk: 619
+  fields:
+    question: 153
+    text: Create separate sales_transaction_header and sales_transaction_line tables and, when querying, specify the sales_transaction_line first in the WHERE clause.
+    is_correct: false
+
+- model: sim.question
+  pk: 154
+  fields:
+    quiz: 3
+    text: You created a new version of a Dataflow streaming data ingestion pipeline that reads from Pub/Sub and writes to BigQuery. The previous version of the pipeline that runs in production uses a 5-minute window for processing. You need to deploy the new version of the pipeline without losing any data, creating inconsistencies, or increasing the processing latency by more than 10 minutes. What should you do?
+
+- model: sim.answer
+  pk: 620
+  fields:
+    question: 154
+    text: Drain the old pipeline, then start the new pipeline.
+    is_correct: true
+
+- model: sim.answer
+  pk: 621
+  fields:
+    question: 154
+    text: Update the old pipeline with the new pipeline code.
+    is_correct: false
+
+- model: sim.answer
+  pk: 622
+  fields:
+    question: 154
+    text: Snapshot the old pipeline, stop the old pipeline, and then start the new pipeline from the snapshot.
+    is_correct: false
+
+- model: sim.answer
+  pk: 623
+  fields:
+    question: 154
+    text: Cancel the old pipeline, then start the new pipeline.
+    is_correct: false
+
+- model: sim.question
+  pk: 155
+  fields:
+    quiz: 3
+    text: Your organization's data assets are stored in BigQuery, Pub/Sub, and a PostgreSQL instance running on Compute Engine. Because there are multiple domains and diverse teams using the data, teams in your organization are unable to discover existing data assets. You need to design a solution to improve data discoverability while keeping development and configuration efforts to a minimum. What should you do?
+
+- model: sim.answer
+  pk: 624
+  fields:
+    question: 155
+    text: Use Data Catalog to automatically catalog BigQuery datasets and Pub/Sub topics. Use custom connectors to manually catalog PostgreSQL tables.
+    is_correct: true
+
+- model: sim.answer
+  pk: 625
+  fields:
+    question: 155
+    text: Use Data Catalog to automatically catalog BigQuery datasets. Use Data Catalog APIs to manually catalog Pub/Sub topics and PostgreSQL tables.
+    is_correct: false
+
+- model: sim.answer
+  pk: 626
+  fields:
+    question: 155
+    text: Use Data Catalog to automatically catalog BigQuery datasets and Pub/Sub topics. Use Data Catalog APIs to manually catalog PostgreSQL tables.
+    is_correct: false
+
+- model: sim.answer
+  pk: 627
+  fields:
+    question: 155
+    text: Use customer connectors to manually catalog BigQuery datasets, Pub/Sub topics, and PostgreSQL tables.
+    is_correct: false
+
+
+- model: sim.question
+  pk: 156
+  fields:
+    quiz: 3
+    text: You need to create a SQL pipeline. The pipeline runs an aggregate SQL transformation on a BigQuery table every two hours and appends the result to another existing BigQuery table. You need to configure the pipeline to retry if errors occur. You want the pipeline to send an email notification after three consecutive failures. What should you do?
+
+- model: sim.answer
+  pk: 628
+  fields:
+    question: 156
+    text: Use the BigQueryInsertJobOperator in Cloud Composer, set the retry parameter to three, and set the email_on_failure parameter to true.
+    is_correct: true
+
+- model: sim.answer
+  pk: 629
+  fields:
+    question: 156
+    text: Use the BigQueryUpsertTableOperator in Cloud Composer, set the retry parameter to three, and set the email_on_failure parameter to true.
+    is_correct: false
+
+- model: sim.answer
+  pk: 630
+  fields:
+    question: 156
+    text: Create a BigQuery scheduled query to run the SQL transformation with schedule options that repeats every two hours, and enable email notifications.
+    is_correct: false
+
+- model: sim.answer
+  pk: 631
+  fields:
+    question: 156
+    text: Create a BigQuery scheduled query to run the SQL transformation with schedule options that repeats every two hours, and enable notification to Pub/Sub topic. Use Pub/Sub and Cloud Functions to send an email after three failed executions.
+    is_correct: false

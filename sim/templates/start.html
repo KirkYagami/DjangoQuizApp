@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start Your Quiz</title>
+  <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+  
+  <style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+        padding: 0;
+        margin: 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        overflow-x: hidden;
+    }
+
+    header {
+        background-color: #ff5722;
+        padding: 20px;
+        text-align: center;
+        color: white;
+    }
+
+    header h1 {
+        font-family: 'Courier New', monospace;
+        margin: 0;
+        font-size: 2.0rem;
+    }
+
+    #topic-container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 40px auto;
+        width: 80%;
+        max-width: 1000px;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    #topic-list p {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    #question-heading {
+        font-family: 'Verdana', sans-serif;
+        font-size: 1.5rem; /* Larger font size for emphasis */
+        font-weight: bold;
+        text-align: left; /* Ensure text is left-aligned */
+        width: 100%; /* Full width of the container */
+        margin-bottom: 20px; /* Space below the header */
+        color: #333; /* Darker color for readability */
+        line-height: 1.4; /* Improved line height for readability */
+        padding: 10px 0; /* Padding for better spacing */
+        border-bottom: 2px solid #ddd; /* Modern bottom border */
+        background-color: #fafafa; /* Light background for contrast */
+        border-radius: 5px; /* Rounded corners */
+    }
+
+    ol {
+        padding: 0;
+        list-style-type: none;
+    }
+
+
+
+
+    li.option {
+        font-family: 'Courier New', monospace;
+        font-weight: bold;
+        background-color: #eeeeee;
+        border-radius: 8px;
+        margin: 10px 0;
+        transition: background-color 0.3s;
+        cursor: pointer; /* Change to pointer to indicate clickable option */
+    }
+
+    li.option:hover {
+        background-color: #ddd;
+    }
+
+    /* Hide the radio buttons */
+    input[type="radio"] {
+        display: none;
+    }
+
+    li.option label {
+        display: block;
+        padding: 15px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        user-select: none; /* Prevent text selection */
+    }
+
+    /* Highlight selected option */
+    input[type="radio"]:checked + label {
+        background-color: #ff5722;
+        color: white;
+    }
+
+    .btn {
+        background-color: #ff5722;
+        color: #fff;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        margin: 20px auto;
+        display: block;
+        text-align: center;
+        transition: background-color 0.3s;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .btn:hover {
+        background-color: #e64a19;
+    }
+
+    .lettered-options {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    
+    /* Style the ordered list to use letters */
+    .lettered-options {
+        list-style-type: upper-alpha; /* Use uppercase letters */
+        padding-left: 20px; /* Add some padding to the left */
+    }
+    
+    .lettered-options .option {
+        margin-bottom: 10px; /* Add space between options */
+    }
+    
+    .lettered-options input[type="radio"] {
+        margin-right: 5px; /* Space between radio button and label */
+    }
+
+
+    footer {
+        font-family: 'Courier New', monospace;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+    }
+
+    footer p {
+        margin: 0;
+        font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Professional Data Engineer Exam Practice Questions</h1>
+</header>
+
+<section id="main-content">
+  <form id="topic-container" hx-post="{% url 'get-questions' %}/start">
+    {% csrf_token %}
+    <h2 id="heading-text">Google Cloud Certified Professional Data Engineer</h2>
+    <div id="topic-list">
+      <p>Please Pick A Practice Set</p>
+
+      <ol>
+        {% for topic in topics %}
+        <li class="option">
+          <input type="radio" id="topic-{{ forloop.counter0 }}" value="{{ topic.id }}" name="quiz_id" required>
+          <label for="topic-{{ forloop.counter0 }}">{{ topic.name }} ({{ topic.questions_count }} questions)</label>
+        </li>
+        {% endfor %}
+
+        {% if not topics %}
+        <li>No topics available. Have you added topics into your database?</li>
+        {% endif %}
+      </ol>
+
+      <button class="btn" type="submit">Start Your Quiz</button>
+    </div>
+  </form>
+</section>
+
+
+<footer>
+    <p>Made with ❤️ by Nikhil Sharma @Revature</p>
+  </footer>
+  
+</body>
+</html>
+
+
+
+
+
+{% comment %} Older Code below {% endcomment %}
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Start your quiz </title>
+  <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+  
+  <style>
+    body {
+        font-family: 'Verdana', sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+        line-height: 1.6;
+        padding: 20px;
+        max-width: 1200px;
+        /* Added max-width for overall content */
+        margin: 0 auto;
+        /* Center the content */
+    }
+    
+    #topic-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: auto;
+        width: 80%;
+        /* Increased from 50% to 80% */
+        max-width: 1000px;
+        /* Added max-width for larger screens */
+    }
+    
+    #topic-list {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    
+    #question-form {
+        padding: 20px;
+    }
+
+    /* Question Text */
+
+    #question-heading {
+        font-family: 'Verdana', sans-serif;
+        font-size: 1.5rem; /* Larger font size for emphasis */
+        font-weight: bold;
+        text-align: left; /* Ensure text is left-aligned */
+        width: 100%; /* Full width of the container */
+        margin-bottom: 20px; /* Space below the header */
+        color: #333; /* Darker color for readability */
+        line-height: 1.4; /* Improved line height for readability */
+        padding: 10px 0; /* Padding for better spacing */
+        border-bottom: 2px solid #ddd; /* Modern bottom border */
+        background-color: #fafafa; /* Light background for contrast */
+        border-radius: 5px; /* Rounded corners */
+    }
+    
+    /* Question Text */
+
+
+
+    #heading-text {
+        text-align: justify; /* Justify text */
+        width: 100%; /* Ensure full width */
+        margin-bottom: 20px; /* Add some space below the question */
+    }
+    
+    #heading-text::after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        /* Adds a block level element to ensure full justification */
+    }
+    
+    .lettered-options {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .option {
+        font-family: 'Courier New', monospace;
+        font-weight: bold;
+        border-radius: 10px;
+        width: 100%;
+        /* Ensure options are full width */
+    }
+    
+    .option input[type="radio"] {
+        display: none;
+        /* Hide the radio button */
+    }
+    
+    .option label {
+        display: block;
+        padding: 10px 20px;
+        background-color: #eeeeee;
+        border-radius: 5px;
+        margin: 5px 0;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 100%; /* Ensure label spans full width of the option */
+        text-align: justify; /* Justify text inside label */
+    }
+    
+    .option label:hover {
+        background-color: #c9c9c9;
+    }
+    
+    .option input[type="radio"]:checked+label {
+        background-color: #818181;
+        color: #fff;
+    }
+    
+
+    #heading-text {
+        text-align: center;
+    }
+
+
+    .btn {
+        background-color: #ff5722; /* Orange color */
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-out;
+        display: block;
+        margin: 20px auto;
+        width: 200px;
+        /* Added fixed width for consistency */
+        font-size: 16px; /* Optional: Adjust font size for better readability */
+        font-weight: bold; /* Optional: Make text bold for better emphasis */
+    }
+    
+    .btn:hover {
+        background-color: #e64a19; /* Darker orange for hover effect */
+    }
+
+    /* Style the ordered list to use letters */
+    .lettered-options {
+        list-style-type: upper-alpha; /* Use uppercase letters */
+        padding-left: 20px; /* Add some padding to the left */
+    }
+    
+    .lettered-options .option {
+        margin-bottom: 10px; /* Add space between options */
+    }
+    
+    .lettered-options input[type="radio"] {
+        margin-right: 5px; /* Space between radio button and label */
+    }
+    
+</style>
+</head>
+<body>
+
+<form id="topic-container" hx-post="{% url 'get-questions' %}/start">
+  {% csrf_token %}
+  <h2 id="heading-text">
+    Google Cloud Certified Professional Data Engineer
+  </h2>
+  <div id="topic-list">
+
+    <p>Please Pick A Practice Set: </p>
+
+    <ol style="list-style-type: none;">
+      {% for topic in topics %}
+      <li class="option">
+        <input type="radio" id="topic-{{ forloop.counter0 }}" value="{{ topic.id }}" name="quiz_id" required>
+        <label for="topic-{{ forloop.counter0 }}">{{ topic.name }} ({{ topic.questions_count }} questions)</label>
+      </li>
+      {% endfor %}
+
+      {% if not topics %}
+      <li>No topics available. Have you added topics into your database?</li>
+      {% endif %}
+
+    </ol>
+
+    <button class="btn" type="submit">Start your quiz</button>
+  </div>
+</form>
+
+</body>
+</html>
+
+ {% endcomment %}

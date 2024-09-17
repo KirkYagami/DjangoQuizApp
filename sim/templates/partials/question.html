@@ -1,0 +1,57 @@
+{% comment %} <div>
+
+     <form id="question-form" hx-post="{% url 'get-answer' %}">
+        {% csrf_token %}
+
+        <h2 id="question-heading">
+            Q.{{ question_number }}: {{ question.text }}
+        </h2>
+        
+
+        <!-- Options will use letters A, B, C, etc. -->
+        <ol class="lettered-options">
+            {% for answer in answers %}
+            <li class="option">
+                <input type="radio" id="answer-{{ forloop.counter0 }}" value="{{ answer.id }}" name="answer_id" required>
+                <label for="answer-{{ forloop.counter0 }}">{{ answer.text }}</label>
+            </li>
+            {% endfor %}
+        </ol>
+
+        <button class="btn" type="submit">
+            Submit your answer
+        </button>
+
+    </form>
+</div> {% endcomment %}
+
+
+{% comment %} Original Code is up {% endcomment %}
+
+<div id="question-container">
+    <form id="question-form" hx-post="{% url 'get-answer' %}" hx-target="#question-container" hx-swap="outerHTML">
+        {% csrf_token %}
+        <h2 id="question-heading">
+            Q.{{ question_number }}: {{ question.text }}
+        </h2>
+
+        <ol class="lettered-options">
+            {% for answer in answers %}
+            <li class="option">
+                <input type="radio" id="answer-{{ forloop.counter0 }}" value="{{ answer.id }}" name="answer_id" required>
+                <label for="answer-{{ forloop.counter0 }}">{{ answer.text }}</label>
+            </li>
+            {% endfor %}
+        </ol>
+
+        <button class="btn" type="submit">Submit your answer</button>
+    </form>
+</div>
+
+<script>
+    window.onbeforeunload = function () {
+        return "Are you sure you want to leave? You will lose your progress.";
+    };
+</script>
+
+
